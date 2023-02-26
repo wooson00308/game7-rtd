@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813ef203c98f4214aaf54b1e082f6c77, type: 3}
+  m_Name: SO_Tower_200
+  m_EditorClassIdentifier: 
+  _influence: 200
+  _tier: 0
+  _atkDamage: 8
+  _increaseLevelAtkDamage: 8
+  _atkSpeed: 2
+  _atkRange: 4
+  _atkSplash: 0
+  _sptTower: {fileID: 21300000, guid: a4ccd016c14e40a408b4619cff808bbc, type: 3}
+  _pfTowerModel: {fileID: 4167702230187793359, guid: 6f6d0b03ebc50784ab741d857f72598a, type: 3}
+  _pfProjectile: {fileID: 1382132935896882121, guid: aaaf92699c42dda48886952675917a87, type: 3}
+  _pfTower: {fileID: 4325536161990935968, guid: 836c7fe01ca65ea4f8da105c5c4fb1af, type: 3}
+  _atkCrtRate: 10
+  _atkCrtDamage: 125
+  _skillIds: 000000000000000000000000
+  _sellGold: 30
+  _ascendRate: 50
+  _soTowerAnimation: {fileID: 11400000, guid: c9b5d8c52fe835b4eb6471c00db18fab, type: 2}

@@ -10,6 +10,7 @@ namespace Catze
     /// </summary>
     public class GameOverState : GameManager.State
     {
+        
         public override void Activate()
         {
             base.Activate();

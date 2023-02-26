@@ -12,14 +12,12 @@ namespace Catze
         private SO_TAnimation SoAnimation => SOTower.SOTAnimation;
         private Animator _animator;
 
-        protected override void Awake()
+        protected IEnumerator Start()
         {
-            base.Awake();
-        }
-
-        protected void Start()
-        {
+            yield return new WaitForEndOfFrame();
+            
             _animator = Upper.Model.GetComponentInChildren<Animator>();
+            Upper.SetStateOrNull(Upper.IdleState);
         }
 
         public void Play(TowerAniState state)
@@ -47,7 +45,7 @@ namespace Catze
 
         public void SetAttackSpeed(float attackSpeed)
         {
-            _animator.SetFloat(ConstantStrings.ANI_PARAM_FLOAT_TOWER_ATTACK_SPEED, attackSpeed);
+            _animator.SetFloat(ConstantStrings.ANI_PARAM_FLOAT_TOWER_ATTACK_SPEED, 1/attackSpeed);
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Catze
             return _nodes[id];
         }
 
-        public void TryRandomSpawn(Tower tower)
+        public void TryRandomSpawn(SO_Tower tower)
         {
             bool isFindEmptyNode = false;
             _nodes.ForEach(x => { 

@@ -57,11 +57,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7adc3220dfcd29b47940285bbf2f0979, type: 3}
---- !u!95 &1018975035317177087 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 620764854708047138, guid: 7adc3220dfcd29b47940285bbf2f0979, type: 3}
-  m_PrefabInstance: {fileID: 484495666936661981}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8977505104536472627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 4325536161990935968, guid: e86eee8611abc724a901c29a678c1811, type: 3}
       propertyPath: _soTower
       value: 
-      objectReference: {fileID: 11400000, guid: d7bff3a1e6a67dc40b965d9b06ee2980, type: 2}
+      objectReference: {fileID: 11400000, guid: 2f56f2bd2b497f048a8769b4b89e33f9, type: 2}
     - target: {fileID: 4325536161990935969, guid: e86eee8611abc724a901c29a678c1811, type: 3}
       propertyPath: m_Name
       value: Pf_Tower_100200
@@ -124,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 4325536162476841983, guid: e86eee8611abc724a901c29a678c1811, type: 3}
       propertyPath: _animator
       value: 
-      objectReference: {fileID: 1018975035317177087}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e86eee8611abc724a901c29a678c1811, type: 3}
 --- !u!4 &4652752138677790770 stripped

@@ -7,6 +7,11 @@ namespace Catze
 {
     public class GameManager : MUnit<GameManager>
     {
+        public bool IsPause => _isPause;
+
+        public Action PauseAction;
+        public Action ResumeAction;
+
         public abstract class State : UnitState
         {
             protected GameManager Upper => UpperUnit as GameManager;
@@ -38,6 +43,7 @@ namespace Catze
         protected override void Awake()
         {
             base.Awake();
+            _isPause = false;
 
             AddState(_prepareState);
             AddState(_startState);
@@ -51,6 +57,22 @@ namespace Catze
 
             // 한 프레임 쉬고 상태 변환
             SetStateOrNull(_prepareState);
+        }
+
+        public void Pause()
+        {
+            _isPause = !_isPause;
+
+            if(_isPause)
+            {
+                Time.timeScale = 0;
+                PauseAction?.Invoke();
+            }
+            else
+            {
+                Time.timeScale = 1;
+                ResumeAction?.Invoke();
+            }
         }
     }
 }

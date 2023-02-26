@@ -12,8 +12,7 @@ namespace Catze
         [SerializeField] protected Transform _model;
         public Transform Model => _model;
 
-        [Header("Tower")]
-        [SerializeField] protected SO_Tower _soTower;
+        protected SO_Tower _soTower;
         public SO_Tower SOTower => _soTower;
 
         public abstract class Part : UnitPart
@@ -37,11 +36,15 @@ namespace Catze
         public TIdleState IdleState;
         public TAttackState AttackState;
 
+        public void SetSOTower(SO_Tower soTower)
+        {
+            Debug.Log($"{soTower.DisplayName}");
+            _soTower = soTower;
+        }
+
         protected override void Awake()
         {
             base.Awake();
-
-            SetUnitInfo(_soTower.Id, _soTower.DisplayName);
 
             AddPart(AniPart);
             AddPart(AttackPart);
@@ -52,15 +55,23 @@ namespace Catze
 
         IEnumerator Start()
         {
+            Instantiate(_soTower.PfTowerModel, _model);
+            
             yield return new WaitForEndOfFrame();
 
-            // 한 프레임 쉬고 상태 변환
-            SetStateOrNull(IdleState);
+            SetUnitInfo(_soTower.Id, _soTower.DisplayName);
+            transform.name = _soTower.DisplayName;
         }
 
         public void SetNode(Node node)
         {
             _upperUnit = node;
+        }
+
+        public void Sell()
+        {
+            TowerManager.Instance.AddMoney(_soTower.SellCost);
+            Destroy(gameObject);
         }
     }
 }

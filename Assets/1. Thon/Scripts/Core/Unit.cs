@@ -86,6 +86,30 @@ namespace Catze
         public bool IsActivate => _isActivate;
         public bool IsInactivate => _isInactivate;
 
+        protected bool _isPause;
+
+        protected virtual void PauseEvent()
+        {
+            _isPause = true;
+        }
+
+        protected virtual void ResumeEvent()
+        {
+            _isPause = false;
+        }
+
+        private void OnEnable()
+        {
+            GameManager.Instance.PauseAction += PauseEvent;
+            GameManager.Instance.ResumeAction += ResumeEvent;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.PauseAction -= PauseEvent;
+            GameManager.Instance.ResumeAction -= ResumeEvent;
+        }
+
         protected virtual void Awake()
         {
             _isUseLapse = false;

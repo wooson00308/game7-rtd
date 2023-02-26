@@ -10,6 +10,13 @@ namespace Catze.Enum
         GameClear
     }
 
+    public enum Influence
+    {
+        Nife = 100,
+        Gun = 200,
+        Lance = 300,
+    }
+
     public enum TowerTier
     {
         Common,
@@ -19,7 +26,7 @@ namespace Catze.Enum
         Acient,
         Relic,
         Myth,
-        Eternity,
+        Eternity = 8,
     }
 
     public enum TowerAniState
@@ -32,5 +39,13 @@ namespace Catze.Enum
     {
         Monster,
         Boss,
+    }
+
+    public enum MonsterAniState
+    {
+        Idle,
+        Move,
+        Damaged,
+        Death,
     }
 }

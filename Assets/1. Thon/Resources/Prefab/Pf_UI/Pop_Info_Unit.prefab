@@ -2095,6 +2095,10 @@ MonoBehaviour:
   _atkRangeText: {fileID: 3088857370051828303}
   _atkCrtRateText: {fileID: 3088857370264923811}
   _atkCrtDamageText: {fileID: 3088857369961762078}
+  _sellButton: {fileID: 3088857369630432354}
+  _sellCostText: {fileID: 3088857370945293273}
+  _acendButton: {fileID: 3088857371147032332}
+  _ascendRateText: {fileID: 3088857370261086334}
 --- !u!1 &3088857370644630101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,7 +3191,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3088857371147032331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560966514324540430}
+        m_TargetAssemblyTypeName: Catze.TowerInfoPopupUI, Assembly-CSharp
+        m_MethodName: Acend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3088857371153442846
 GameObject:
   m_ObjectHideFlags: 0

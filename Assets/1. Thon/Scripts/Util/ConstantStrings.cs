@@ -20,5 +20,12 @@ namespace Catze
         public static readonly string ANI_PARAM_TRIGER_TOWER_IDLE = "Idle";
         public static readonly string ANI_PARAM_TRIGER_TOWER_ATK = "Attack";
         public static readonly string ANI_PARAM_FLOAT_TOWER_ATTACK_SPEED = "AttackSpeed";
+
+        public static readonly string ANI_CLIP_MONSTER_IDLE = "Ani_Monster_Idle";
+        public static readonly string ANI_CLIP_MONSTER_ATK = "Ani_Monster_Move";
+
+        public static readonly string ANI_PARAM_BOOL_MONSTER_IDLE = "Idle";
+        public static readonly string ANI_PARAM_BOOL_MONSTER_MOVE = "Move";
+        public static readonly string ANI_PARAM_FLOAT_MONSTER_MOVE_SPEED = "MoveSpeed";
     }
 }

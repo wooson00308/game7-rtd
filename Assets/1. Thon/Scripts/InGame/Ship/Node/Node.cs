@@ -27,7 +27,7 @@ namespace Catze
             _id = id;
         }
 
-        public bool SpawnTower(Tower pfTower)
+        public bool SpawnTower(SO_Tower soTower)
         {
             if (!_isEmptyTower)
             {
@@ -37,23 +37,49 @@ namespace Catze
 
             _isEmptyTower = false;
 
-            _tower = Instantiate(pfTower, _towerSpawnPoint);
+            _tower = Instantiate(soTower.PfTower, _towerSpawnPoint);
+            _tower.SetSOTower(soTower);
             _tower.SetNode(this);
 
             return true;
         }
 
-        public bool RemoveTower()
+        public bool AcendTower()
         {
             if (_isEmptyTower)
             {
-                LogError($"{nameof(Node)}, {nameof(RemoveTower)}, is empty Node!");
+                LogError($"{nameof(Node)}, {nameof(AcendTower)}, is empty Node!");
+                return false;
+            }
+
+            var soTower = TowerManager.Instance.GetAcendTower(_tower.SOTower.Tier);
+
+            if(soTower != null)
+            {
+                Destroy(_tower.gameObject);
+                _isEmptyTower = true;
+
+                SpawnTower(soTower);
+
+                return true;
+            }
+
+            Debug.Log($"Acend Faild!");
+
+            return false;
+        }
+
+        public bool SellTower()
+        {
+            if (_isEmptyTower)
+            {
+                LogError($"{nameof(Node)}, {nameof(SellTower)}, is empty Node!");
                 return false;
             }
 
             _isEmptyTower = true;
 
-            Destroy(_tower.gameObject);
+            _tower.Sell();
             _tower = null;
 
             return true;

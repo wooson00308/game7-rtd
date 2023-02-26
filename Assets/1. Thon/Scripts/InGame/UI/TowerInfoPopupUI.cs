@@ -22,6 +22,13 @@ namespace Catze
         [SerializeField] private TMP_Text _atkCrtRateText;
         [SerializeField] private TMP_Text _atkCrtDamageText;
 
+        [SerializeField] private Button _sellButton;
+        
+        [SerializeField] private TMP_Text _sellCostText;
+        
+        [SerializeField] private Button _acendButton;
+        [SerializeField] private TMP_Text _ascendRateText;
+ 
         public bool ActiveSelf => gameObject.activeSelf;
 
         /// <summary>
@@ -51,6 +58,18 @@ namespace Catze
             _atkRangeText.text = param.tower.AtkRange.ToString();
             _atkCrtRateText.text = param.tower.AtkCrtRate.ToString();
             _atkCrtDamageText.text = param.tower.AtkCrtDamage.ToString();
+
+            _sellButton.gameObject.SetActive(param.tower.CanSell);
+            if (param.tower.CanSell)
+            {
+                _sellCostText.text = param.tower.SellCost.ToString();
+            }
+
+            _acendButton.gameObject.SetActive(param.tower.CanAcend);
+            if(param.tower.CanAcend)
+            {
+                _ascendRateText.text = $"{param.tower.AcendRate}%";
+            }
         }
 
         public void Deactivate()
@@ -61,10 +80,21 @@ namespace Catze
         public void Sell()
         {
             var node = TowerManager.Instance.Ship.NodePart.Nodes[_nodeId];
-            node.RemoveTower();
+            node.SellTower();
 
             TowerManager.Instance.Ship.NodePart.DeselectedNode();
             Deactivate();
+        }
+
+        public void Acend()
+        {
+            var node = TowerManager.Instance.Ship.NodePart.Nodes[_nodeId];
+
+            if (node.AcendTower())
+            {
+                TowerManager.Instance.Ship.NodePart.DeselectedNode();
+                Deactivate();
+            }
         }
     }
 }

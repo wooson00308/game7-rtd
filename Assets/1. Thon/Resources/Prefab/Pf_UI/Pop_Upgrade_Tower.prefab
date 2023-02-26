@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -101}
-  m_SizeDelta: {x: 121.79, y: 61.36}
+  m_SizeDelta: {x: 0, y: 61.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4567208829623247270
 CanvasRenderer:
@@ -188,7 +188,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 11.7, y: -32}
-  m_SizeDelta: {x: 138.25, y: 61.36}
+  m_SizeDelta: {x: 0, y: 61.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4567208829632368128
 CanvasRenderer:
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c35da11ed9dbef843a633b78d88937de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 507957a2abda0e242b2016f392eb6e74, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 507957a2abda0e242b2016f392eb6e74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee682e9eb16364c479e858526ff1b308, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -718,7 +718,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -101}
-  m_SizeDelta: {x: 121.79, y: 61.36}
+  m_SizeDelta: {x: 0, y: 61.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4567208830107735151
 CanvasRenderer:
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ee682e9eb16364c479e858526ff1b308, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c35da11ed9dbef843a633b78d88937de, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1061,7 +1061,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 11.7, y: -32}
-  m_SizeDelta: {x: 138.25, y: 61.36}
+  m_SizeDelta: {x: 0, y: 61.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4567208830751199042
 CanvasRenderer:
@@ -1296,10 +1296,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4567208831463531433}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Catze.UIManager, Assembly-CSharp
+        m_MethodName: HideUpgradeTower
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1346,7 +1346,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 11.7, y: -32}
-  m_SizeDelta: {x: 138.25, y: 61.36}
+  m_SizeDelta: {x: 0, y: 61.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4567208831078619144
 CanvasRenderer:
@@ -1696,7 +1696,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -101}
-  m_SizeDelta: {x: 121.79, y: 61.36}
+  m_SizeDelta: {x: 0, y: 61.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4567208831284809891
 CanvasRenderer:
@@ -1826,7 +1826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4567208831463531432
 RectTransform:
   m_ObjectHideFlags: 0
