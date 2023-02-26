@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,34 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 1536930553
+    locked: 0
+  - name: Base_UI
+    uniqueID: 2595860759
+    locked: 0
+  - name: Monster
+    uniqueID: 1177376387
+    locked: 0
+  - name: Ship
+    uniqueID: 1732547845
+    locked: 0
+  - name: Tile
+    uniqueID: 2143044479
+    locked: 0
+  - name: Tower
+    uniqueID: 1536618197
+    locked: 0
+  - name: Efx
+    uniqueID: 1108240943
+    locked: 0
+  - name: HUD
+    uniqueID: 1344016133
+    locked: 0
+  - name: Pan
+    uniqueID: 2351859507
+    locked: 0
+  - name: Pop
+    uniqueID: 3273833307
     locked: 0
