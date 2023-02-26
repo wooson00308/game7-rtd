@@ -46,7 +46,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TryDealDamage(float damageReceived)
     {
-        if (API.Inst.Replay.IsReplayMode) return;
+        if (API.Instance.Replay.IsReplayMode) return;
 
         DealDamage(damageReceived);
     }

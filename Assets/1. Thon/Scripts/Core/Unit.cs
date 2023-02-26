@@ -13,7 +13,7 @@ namespace Catze
         public int Id => _id;
         public string DisplayName => _displayName;
 
-        Unit _upperUnit;
+        protected Unit _upperUnit;
         public Unit UpperUnit => _upperUnit;
 
         /// <summary>

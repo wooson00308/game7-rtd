@@ -13,8 +13,10 @@ namespace Catze.API
         public AuthPart AuthPart;
         public DataPart DataPart;
 
-        protected void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             AddPart(AuthPart);
             AddPart(DataPart);
         }

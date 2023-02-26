@@ -55,7 +55,7 @@ public class Node_Old : MonoBehaviour
     }
     public void TrySellTurret()
     {
-        if (API.Inst.Replay.IsReplayMode) return;
+        if (API.Instance.Replay.IsReplayMode) return;
 
         SellTurret();
     }

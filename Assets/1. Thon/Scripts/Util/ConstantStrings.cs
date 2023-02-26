@@ -6,8 +6,10 @@ namespace Catze
 {
     public static class ConstantStrings
     {
-        static readonly string PREFAB = "pfb-";
-        public static readonly string PREFAB_API = PREFAB + "api";
+        public static readonly string PREFAB_PATH = "Prefab/";
+
+        static readonly string PREFAB = "Pf_";
+        public static readonly string PREFAB_API = PREFAB + "API";
 
         public static readonly string PLAYFAB_EMAIL = "test@test.com";
         public static readonly string PLAYFAB_PASSWORD = "1234qwer!";

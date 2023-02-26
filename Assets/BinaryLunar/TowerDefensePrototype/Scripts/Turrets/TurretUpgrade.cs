@@ -35,7 +35,7 @@ public class TurretUpgrade : MonoBehaviour
     
     public void TryUpgradeTurret()
     {
-        if (API.Inst.Replay.IsReplayMode) return;
+        if (API.Instance.Replay.IsReplayMode) return;
 
         UpgradeTurret();
     }

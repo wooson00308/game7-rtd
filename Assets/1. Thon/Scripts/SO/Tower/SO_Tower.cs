@@ -19,6 +19,7 @@ namespace Catze
         [SerializeField] protected float _atkSpeed;
         [SerializeField] protected int _atkRange;
         [SerializeField] protected int _atkSplash;
+        [SerializeField] protected Sprite _sptTower;
         [SerializeField] protected GameObject _pfTowerModel;
         [SerializeField] protected GameObject _pfProjectile;
         [SerializeField] protected Tower _pfTower;
@@ -39,6 +40,7 @@ namespace Catze
         public float AtkSpeed => _atkSpeed;
         public int AtkRange => _atkRange;
         public int AtkSplash => _atkSplash;
+        public Sprite SptTower => _sptTower;
         public GameObject PfTowerModel=> _pfTowerModel;
         public GameObject PfProjectile => _pfProjectile;
         public Tower PfTower => _pfTower;

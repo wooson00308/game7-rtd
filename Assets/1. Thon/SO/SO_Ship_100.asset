@@ -15,4 +15,4 @@ MonoBehaviour:
   _id: 100
   _displayName: Normal Ship
   _pfShipModel: {fileID: 5641985301028517685, guid: 95c3a7353bce790489315333bfd2292e, type: 3}
-  _pfShip: {fileID: 5526036551166985377, guid: b6d179a882f4f504182938cbb8148a76, type: 3}
+  _pfShip: {fileID: 5526036551166985377, guid: 50b47b4ce3d5ab0459bac3a4adc88581, type: 3}

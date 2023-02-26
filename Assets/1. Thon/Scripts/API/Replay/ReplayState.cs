@@ -62,7 +62,7 @@ namespace Catze.API
             if (_currentRecord._nodeIndex != -1)
             {
                 node = NodeStorage.Instance.GetNode(_currentRecord._nodeIndex);
-                UIManager.Instance.NodeSelected(node);
+                //UIManager.Instance.NodeSelected(node);
             }
 
             switch (_currentRecord._eventType)

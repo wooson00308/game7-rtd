@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813ef203c98f4214aaf54b1e082f6c77, type: 3}
+  m_Name: SO_Tower_100
+  m_EditorClassIdentifier: 
+  _id: 100100
+  _influence: 100
+  _tier: 0
+  _displayName: "\uCD1D Common"
+  _atkDamage: 3
+  _increaseLevelAtkDamage: 3
+  _atkSpeed: 2
+  _atkRange: 4
+  _atkSplash: 0
+  _sptTower: {fileID: 21300000, guid: ee682e9eb16364c479e858526ff1b308, type: 3}
+  _pfTowerModel: {fileID: 4167702230187793359, guid: be0682e66904a9b4bb0b3132ffac71a8, type: 3}
+  _pfProjectile: {fileID: 0}
+  _pfTower: {fileID: 4652752139313252755, guid: 7e4aad8cde2ccc346b787e6e805977a0, type: 3}
+  _atkCrtRate: 10
+  _atkCrtDamage: 125
+  _skillIds: 000000000000000000000000
+  _canLevelUp: 1
+  _canSell: 1
+  _sellGold: 30
+  _soTowerAnimation: {fileID: 11400000, guid: c9b5d8c52fe835b4eb6471c00db18fab, type: 2}

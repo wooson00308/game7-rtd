@@ -33,7 +33,7 @@ public class TurretCard : MonoBehaviour
 
     public void TryPlaceTurret()
     {
-        if (API.Inst.Replay.IsReplayMode) return;
+        if (API.Instance.Replay.IsReplayMode) return;
 
         PlaceTurret();
     }

@@ -9,6 +9,7 @@ namespace Catze
     /// </summary>
     public class Ship : Unit
     {
+        [Header("Ship")]
         [SerializeField] protected SO_Ship _soShip;
         public SO_Ship SOShip => _soShip;
 

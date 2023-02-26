@@ -14,7 +14,7 @@ namespace Catze
 
         public int Id => _id;
         public string DisplayName => _displayName;
-        public GameObject ShipModel => _pfShipModel;
-        public Ship Ship => _pfShip;
+        public GameObject PfShipModel => _pfShipModel;
+        public Ship PfShip => _pfShip;
     }
 }

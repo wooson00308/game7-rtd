@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Catze
 {
     public class Node : Unit
     {
-        private bool _isEmptyNode = true;
-        private Tower _tower;
+        private SNodePart SNodePart => UpperUnit as SNodePart;
 
+        private bool _isSelected = false;
+
+        [Header("Node")]
+        [SerializeField] private bool _isEmptyTower = true;
+        [SerializeField] private Tower _tower;
         [SerializeField] private Transform _towerSpawnPoint;
-        [SerializeField] private GameObject _selectEffect;
 
-        public bool IsEmptyNode => _isEmptyNode;
+        public UnityEvent SelectEvent;
+        public UnityEvent DeselectEvent;
+
+        public bool IsEmptyTower => _isEmptyTower;
         public Tower Tower => _tower;
 
         public void SetId(int id)
@@ -20,33 +27,83 @@ namespace Catze
             _id = id;
         }
 
-        public void SpawnTower(Tower pfTower)
+        public bool SpawnTower(Tower pfTower)
         {
-            if (!_isEmptyNode)
+            if (!_isEmptyTower)
             {
-                LogError($"{nameof(Node)}, {nameof(SpawnTower)}, is not empty Node!");
-                return;
+                Log($"{nameof(Node)}, {nameof(SpawnTower)}, is not empty Node!");
+                return false;
             }
 
-            _isEmptyNode = false;
+            _isEmptyTower = false;
 
             _tower = Instantiate(pfTower, _towerSpawnPoint);
+            _tower.SetNode(this);
+
+            return true;
         }
 
-        public void RemoveTower()
+        public bool RemoveTower()
         {
-            if (_isEmptyNode)
+            if (_isEmptyTower)
             {
                 LogError($"{nameof(Node)}, {nameof(RemoveTower)}, is empty Node!");
-                return;
+                return false;
             }
 
-            _isEmptyNode = true;
+            _isEmptyTower = true;
 
             Destroy(_tower.gameObject);
             _tower = null;
+
+            return true;
         }
-        
-        // TODO : Upgrade Tower on Node
+
+        public void OnTouchNode()
+        {
+            if (_isEmptyTower)
+            {
+                SNodePart.DeselectedNode();
+                return;
+            }
+
+            SNodePart.OnNodeSelect(this);
+        }
+
+        [HideInInspector]
+        public void SetSelect(bool value = true)
+        {
+            TryPopupTowerInfo(value);
+
+            if (value)
+            {
+                SelectEvent?.Invoke();
+            }
+            else
+            {
+                DeselectEvent?.Invoke();
+            }
+        }
+
+        void TryPopupTowerInfo(bool value)
+        {
+            if (value && !_isEmptyTower)
+            {
+                UIManager.Instance.ShowTowerInfo(new TowerInfoPopupParam
+                {
+                    node = this,
+                    tower = _tower.SOTower
+                });
+            }
+            else
+            {
+                UIManager.Instance.HideTowerInfo();
+            }
+        }
+
+        public void SetNodePart(SNodePart nodePart)
+        {
+            _upperUnit = nodePart;
+        }
     }
 }

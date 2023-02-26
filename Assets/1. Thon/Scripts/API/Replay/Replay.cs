@@ -36,15 +36,17 @@ namespace Catze.API
         public ReplayState ReplayState;
         public RecordState RecordState;
 
-        protected void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             AddState(ReplayState);
             AddState(RecordState);
         }
 
         public void TryActivate(Action callback = null)
         {
-            API.Inst.PlayFab.DataPart.LoadReplayData((result, data) =>
+            API.Instance.PlayFab.DataPart.LoadReplayData((result, data) =>
             {
                 if (result)
                 {

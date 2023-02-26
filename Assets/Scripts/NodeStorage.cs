@@ -7,16 +7,14 @@ using UnityEngine;
 /// <summary>
 /// Awake 이 후로 검색 가능
 /// </summary>
-public class NodeStorage : Unit
+public class NodeStorage : MUnit<NodeStorage>
 {
-    public static NodeStorage Instance;
-
     readonly List<Node_Old> _nodes = new();
     public List<Node_Old> Nodes => _nodes;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null) Instance = this;
+        base.Awake();
 
         _nodes.AddRange(gameObject.GetComponentsInChildren<Node_Old>().ToList());
 

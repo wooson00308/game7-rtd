@@ -21,8 +21,10 @@ namespace Catze.API
         public OnlineState OnlineState;
         public OfflineState OfflineState;
 
-        protected void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             AddState(OnlineState);
             AddState(OfflineState);
 

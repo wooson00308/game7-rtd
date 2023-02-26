@@ -26,18 +26,18 @@ public class LevelManager : Singleton<LevelManager>
 
     void TryGameStart()
     {
-        API.Inst.PlayFab.AuthPart.OnLoginWithEmail(new LoginWithEmailModel
+        API.Instance.PlayFab.AuthPart.OnLoginWithEmail(new LoginWithEmailModel
         {
             email = ConstantStrings.PLAYFAB_EMAIL,
             password = ConstantStrings.PLAYFAB_PASSWORD
         }, 
         result =>
         {
-            API.Inst.PlayFab.AuthPart.Log(result.message);
+            API.Instance.PlayFab.AuthPart.Log(result.message);
 
             if(result.isSuccess)
             {
-                API.Inst.Replay.TryActivate();
+                API.Instance.Replay.TryActivate();
             }
             else
             {

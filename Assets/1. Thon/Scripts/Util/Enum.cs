@@ -4,6 +4,12 @@ using UnityEngine;
 
 namespace Catze.Enum
 {
+    public enum IngameEndType
+    {
+        GameOver,
+        GameClear
+    }
+
     public enum TowerTier
     {
         Common,

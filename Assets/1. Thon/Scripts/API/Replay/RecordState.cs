@@ -111,7 +111,7 @@ namespace Catze.API
 
             base.StopState();
 
-            API.Inst.PlayFab.DataPart.SaveReplayData(_replayData);
+            API.Instance.PlayFab.DataPart.SaveReplayData(_replayData);
             Upper.SetStateOrNull(null); // State 변경됨으로서 Inactivate 발생
         }
 

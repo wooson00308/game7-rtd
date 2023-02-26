@@ -43,15 +43,15 @@ public class UIManager : Singleton<UIManager>
     {
         _cantTouchUI.SetActive(true);
 
-        API.Inst.PlayFab.DataPart.RemoveReplayData(callback =>
+        API.Instance.PlayFab.DataPart.RemoveReplayData(callback =>
         {
             if (callback == true)
             {
-                API.Inst.PlayFab.DataPart.Log("Remove Complete!");
+                API.Instance.PlayFab.DataPart.Log("Remove Complete!");
             }
             else
             {
-                API.Inst.PlayFab.DataPart.LogError("Remove Failed!");
+                API.Instance.PlayFab.DataPart.LogError("Remove Failed!");
             }
 
             _cantTouchUI.SetActive(false);

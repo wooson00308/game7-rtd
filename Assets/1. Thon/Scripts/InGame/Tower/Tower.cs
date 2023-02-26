@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Catze
 {
+    /// <summary>
+    /// 타워의 Upper는 Node
+    /// </summary>
     public class Tower : Unit
     {
         [SerializeField] protected Transform _model;
@@ -53,6 +56,11 @@ namespace Catze
 
             // 한 프레임 쉬고 상태 변환
             SetStateOrNull(IdleState);
+        }
+
+        public void SetNode(Node node)
+        {
+            _upperUnit = node;
         }
     }
 }
