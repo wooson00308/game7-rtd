@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pf_Tower_Model_100100
       objectReference: {fileID: 0}
+    - target: {fileID: 6050911457427047149, guid: e27796d4046181d419df069f9fc6eb1c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: dced39ac6f281ab4194aac35113df387, type: 2}
     - target: {fileID: 6864653653728847645, guid: e27796d4046181d419df069f9fc6eb1c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -149,11 +153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7106098490039902043, guid: e27796d4046181d419df069f9fc6eb1c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7106098490039902043, guid: e27796d4046181d419df069f9fc6eb1c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e27796d4046181d419df069f9fc6eb1c, type: 3}

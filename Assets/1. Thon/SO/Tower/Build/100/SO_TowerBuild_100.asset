@@ -15,10 +15,10 @@ MonoBehaviour:
   _influence: 100
   _soTowerBuildInfluenceTiers:
   - {fileID: 11400000, guid: 65944978acdf868428fbeb899c074703, type: 2}
-  - {fileID: 11400000, guid: 65944978acdf868428fbeb899c074703, type: 2}
-  - {fileID: 11400000, guid: 65944978acdf868428fbeb899c074703, type: 2}
-  - {fileID: 11400000, guid: 65944978acdf868428fbeb899c074703, type: 2}
-  - {fileID: 11400000, guid: 65944978acdf868428fbeb899c074703, type: 2}
-  - {fileID: 11400000, guid: 65944978acdf868428fbeb899c074703, type: 2}
-  - {fileID: 11400000, guid: 65944978acdf868428fbeb899c074703, type: 2}
-  - {fileID: 11400000, guid: 65944978acdf868428fbeb899c074703, type: 2}
+  - {fileID: 11400000, guid: ac1b061eb052e754a84cb468e1967225, type: 2}
+  - {fileID: 11400000, guid: 15fcb46c990208f48a6050b11e106e0b, type: 2}
+  - {fileID: 11400000, guid: 2394685c2d1891e428a63d19a89afd13, type: 2}
+  - {fileID: 11400000, guid: 483782835b4743f479a4298e51166816, type: 2}
+  - {fileID: 11400000, guid: 56c2041e1439a1c4fa959e238a339884, type: 2}
+  - {fileID: 11400000, guid: fd6b647cf10da844faf9ee9659937c61, type: 2}
+  - {fileID: 11400000, guid: a966dfaa36f12e044a20375ef6662f88, type: 2}
