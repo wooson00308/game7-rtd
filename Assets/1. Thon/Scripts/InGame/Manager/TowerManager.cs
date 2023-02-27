@@ -166,6 +166,8 @@ namespace Catze
 
         private void UpgradeTower(TowerUpgrade upgrade)
         {
+            UIManager.Instance.HideTowerInfo();
+
             if (upgrade._level >= _maxUpgradeLevel)
             {
                 return;

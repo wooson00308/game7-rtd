@@ -51,28 +51,28 @@ namespace Catze
 
             _nodeId = param.node.Id;
 
-            _displayTowerImage.sprite = param.tower.SptTower;
-            _influenceText.text = param.tower.Influence.ToString();
-            _gradeText.text = param.tower.Tier.ToString();
+            _displayTowerImage.sprite = param.soTower.SptTower;
+            _influenceText.text = param.soTower.Influence.ToString();
+            _gradeText.text = param.soTower.Tier.ToString();
 
-            _atkDamageText.text = param.tower.AtkDamage.ToString();
-            _atkSpeedText.text = param.tower.AtkSpeed.ToString();
-            _atkRangeText.text = param.tower.AtkRange.ToString();
-            _atkCrtRateText.text = param.tower.AtkCrtRate.ToString();
-            _atkCrtDamageText.text = param.tower.AtkCrtDamage.ToString();
+            _atkDamageText.text = param.tower.AttackPart.AttackDamage.ToString();
+            _atkSpeedText.text = param.soTower.AtkSpeed.ToString();
+            _atkRangeText.text = param.soTower.AtkRange.ToString();
+            _atkCrtRateText.text = param.soTower.AtkCrtRate.ToString();
+            _atkCrtDamageText.text = param.soTower.AtkCrtDamage.ToString();
 
-            _acendCostText.text = param.tower.AcendCost.ToString();
+            _acendCostText.text = param.soTower.AcendCost.ToString();
 
-            _sellButton.gameObject.SetActive(param.tower.CanSell);
-            if (param.tower.CanSell)
+            _sellButton.gameObject.SetActive(param.soTower.CanSell);
+            if (param.soTower.CanSell)
             {
-                _sellCostText.text = param.tower.SellCost.ToString();
+                _sellCostText.text = param.soTower.SellCost.ToString();
             }
 
-            _acendButton.gameObject.SetActive(param.tower.CanAcend);
-            if(param.tower.CanAcend)
+            _acendButton.gameObject.SetActive(param.soTower.CanAcend);
+            if(param.soTower.CanAcend)
             {
-                _ascendRateText.text = $"{param.tower.AcendRate}%";
+                _ascendRateText.text = $"{param.soTower.AcendRate}%";
             }
         }
 

@@ -118,7 +118,8 @@ namespace Catze
                 UIManager.Instance.ShowTowerInfo(new TowerInfoPopupParam
                 {
                     node = this,
-                    tower = _tower.SOTower
+                    soTower = _tower.SOTower,
+                    tower = _tower
                 });
             }
             else

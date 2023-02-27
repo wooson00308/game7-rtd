@@ -8,7 +8,8 @@ namespace Catze
     public class TowerInfoPopupParam
     {
         public Node node;
-        public SO_Tower tower;
+        public SO_Tower soTower;
+        public Tower tower;
     }
 
     /// <summary>
