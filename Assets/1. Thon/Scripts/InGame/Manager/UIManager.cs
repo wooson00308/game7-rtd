@@ -21,6 +21,7 @@ namespace Catze
         [Header("UI Manager")]
         [SerializeField] private TowerInfoPopupUI _popupInfoUnit;
         [SerializeField] private GameObject _upgradeTowerUI;
+        [SerializeField] private GameObject _detailSellOptionUI;
         [SerializeField] private GameObject _gameOverUI;
         [SerializeField] private GameObject _gameClearUI;
         [SerializeField] private TMP_Text _moneyText;
@@ -55,6 +56,11 @@ namespace Catze
             _popupInfoUnit.SetActive(true, towerInfo);
         }
 
+        public void ToggleUpgradeTower()
+        {
+            _upgradeTowerUI.SetActive(!_upgradeTowerUI.activeSelf);
+        }
+
         public void ShowUpgradeTower()
         {
             _upgradeTowerUI.SetActive(true);
@@ -65,9 +71,24 @@ namespace Catze
             _upgradeTowerUI.SetActive(false);
         }
 
+        public void ToggleTowerInfo()
+        {
+            _popupInfoUnit.SetActive(!_popupInfoUnit.ActiveSelf);
+        }
+
         public void HideTowerInfo()
         {
             _popupInfoUnit.SetActive(false);
+        }
+
+        public void ToggleDetailSellOptionUI()
+        {
+            _detailSellOptionUI.SetActive(!_detailSellOptionUI.activeSelf);
+        }
+
+        public void HideDetailSellOptionUI()
+        {
+            _detailSellOptionUI.SetActive(false);
         }
 
         public void HideAllPopup()
@@ -76,6 +97,7 @@ namespace Catze
             HideUpgradeTower();
             HideGameClearUI();
             HideGameOverUI();
+            HideDetailSellOptionUI();
         }
 
         public void ShowGameClearUI()
