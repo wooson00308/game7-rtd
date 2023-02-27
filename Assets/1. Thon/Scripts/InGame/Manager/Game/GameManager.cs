@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Catze
 {
@@ -44,16 +45,16 @@ namespace Catze
         {
             base.Awake();
             _isPause = false;
-
-            AddState(_prepareState);
-            AddState(_startState);
-            AddState(_overState);
-            AddState(_clearState);
         }
 
         IEnumerator Start()
         {
             yield return new WaitForEndOfFrame();
+
+            AddState(_prepareState);
+            AddState(_startState);
+            AddState(_overState);
+            AddState(_clearState);
 
             // 한 프레임 쉬고 상태 변환
             SetStateOrNull(_prepareState);
@@ -73,6 +74,17 @@ namespace Catze
                 Time.timeScale = 1;
                 ResumeAction?.Invoke();
             }
+        }
+
+        public void Restart()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void Exit()
+        {
+            Application.Quit();
         }
     }
 }

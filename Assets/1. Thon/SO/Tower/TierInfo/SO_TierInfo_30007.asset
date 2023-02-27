@@ -16,3 +16,4 @@ MonoBehaviour:
   _tier: 6
   _buildWeightRate: 0.23
   _cost: 350
+  _pfGradeColor: {fileID: 602784485575602489, guid: aa9d180115e58fb47998b7a03be33278, type: 3}

@@ -55,8 +55,9 @@ namespace Catze
 
         IEnumerator Start()
         {
+            Instantiate(_soTower.PfGradeColor, _model);
             Instantiate(_soTower.PfTowerModel, _model);
-            
+
             yield return new WaitForEndOfFrame();
 
             SetUnitInfo(_soTower.Id, _soTower.DisplayName);

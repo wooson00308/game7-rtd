@@ -57,6 +57,9 @@ TagManager:
   - name: Tile
     uniqueID: 2143044479
     locked: 0
+  - name: GradeColor
+    uniqueID: 1249244563
+    locked: 0
   - name: Tower
     uniqueID: 1536618197
     locked: 0

@@ -28,8 +28,25 @@ namespace Catze
         protected override void Awake()
         {
             base.Awake();
+        }
 
+        protected virtual void OnEnable()
+        {
             instance = this as T;
+
+            StartCoroutine(COEnable());
+        }
+
+        private IEnumerator COEnable()
+        {
+            yield return new WaitForEndOfFrame();
+
+            DelayEnable();
+        }
+
+        protected virtual void DelayEnable()
+        {
+
         }
     }
 }

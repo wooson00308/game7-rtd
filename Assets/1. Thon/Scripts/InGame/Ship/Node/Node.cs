@@ -52,7 +52,7 @@ namespace Catze
                 return false;
             }
 
-            var soTower = TowerManager.Instance.GetAcendTower(_tower.SOTower.Tier);
+            var soTower = TowerManager.Instance.GetAcendTower(_tower);
 
             if(soTower != null)
             {

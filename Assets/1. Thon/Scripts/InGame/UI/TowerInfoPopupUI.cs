@@ -42,7 +42,6 @@ namespace Catze
         {
             base.SetActive(value);
 
-            if (!value) return;
             if (param == null)
             {
                 LogError($"{nameof(TowerInfoPopupUI)}, {nameof(SetActive)}, tower info is null!");

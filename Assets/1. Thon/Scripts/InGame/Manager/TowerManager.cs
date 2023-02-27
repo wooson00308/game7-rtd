@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace Catze
 {
@@ -134,23 +133,23 @@ namespace Catze
             return null;
         }
 
-        public SO_Tower GetAcendTower(TowerTier tier)
+        public SO_Tower GetAcendTower(Tower tower)
         {
-            if (_money < _buildTierInfo.Cost)
+            if (_money < tower.SOTower.AcendCost)
             {
-                Log($"Not Enough Money! : {_money} < {_buildTierInfo.Cost}");
+                Log($"Not Enough Money! : {_money} < {tower.SOTower.AcendCost}");
                 return null;
             }
 
-            _money -= _buildTierInfo.Cost;
+            _money -= tower.SOTower.AcendCost;
             UIManager.Instance.SetMoney(_money);
 
-            var buildInfluenceTier = _soTowerBuild.GetBuildTierInfo(tier);
+            var buildInfluenceTier = _soTowerBuild.GetBuildTierInfo(tower.SOTower.Tier);
             if (buildInfluenceTier != null)
             {
                 if (Util.GetRateResult(buildInfluenceTier.BuildWeightRate))
                 {
-                    var buildTier = _soTowerBuild.GetAcendTier(tier);
+                    var buildTier = _soTowerBuild.GetAcendTier(tower.SOTower.Tier);
                     if (buildTier != null)
                     {
                         _buildTierInfo = buildTier.SOTierInfo;
@@ -215,9 +214,11 @@ namespace Catze
             _money += money;
             UIManager.Instance.SetMoney(_money);
         }
-        
-        protected void OnEnable()
+
+        protected override void DelayEnable()
         {
+            base.DelayEnable();
+
             GameManager.PrepareState.AddEvent(GamePrepareEvent);
             GameManager.StartState.AddEvent(GameStartEvent);
         }

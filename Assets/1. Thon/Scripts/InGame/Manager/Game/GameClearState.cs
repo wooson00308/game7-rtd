@@ -15,6 +15,8 @@ namespace Catze
             base.Activate();
 
             _activateEvent?.Invoke();
+
+            UIManager.Instance.ShowGameClearUI();
         }
     }
 }

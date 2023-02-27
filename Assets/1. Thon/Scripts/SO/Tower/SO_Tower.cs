@@ -52,5 +52,6 @@ namespace Catze
         public SO_TAnimation SOTAnimation => _soTowerAnimation;
 
         public int AcendCost => _buildTierInfo.Cost;
+        public GameObject PfGradeColor => _buildTierInfo.PfGradeColor;
     }
 }

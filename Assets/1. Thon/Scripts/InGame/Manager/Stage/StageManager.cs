@@ -163,6 +163,8 @@ namespace Catze
 
                 curWaveIndex++;
             }
+
+            GameManager.Instance.SetStateOrNull(GameManager.ClearState);
         }
 
         IEnumerator COWave()
@@ -198,8 +200,10 @@ namespace Catze
             }
         }
 
-        protected void OnEnable()
+        protected override void DelayEnable()
         {
+            base.DelayEnable();
+
             GameManager.PrepareState.AddEvent(GamePrepareEvent);
             GameManager.StartState.AddEvent(GameStartEvent);
             GameManager.OverState.AddEvent(GameOverEvent);

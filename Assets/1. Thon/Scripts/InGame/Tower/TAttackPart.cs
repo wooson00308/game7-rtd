@@ -26,7 +26,7 @@ namespace Catze
         private Projectile _projectile;
 
         public float AttackSpeed => _currentAttackSpeed;
-        public int AttackDamage
+        public int AttackDamageOrCrt
         {
             get
             {
@@ -36,10 +36,19 @@ namespace Catze
                     return _currentAttackCrtDamage;
                 }
 
+                return AttackDamage;
+            }
+        }
+
+        public int AttackDamage
+        {
+            get
+            {
                 int level = TowerManager.Instance.GetTowerUpgradeLevel(SOTower.InfluenceInt);
                 return _currentAttackDamage * level;
             }
         }
+
         public float AttackCrtRate => _currentAttackCrtRate;
         public int AttackCrtDamage => _currentAttackCrtDamage;
 

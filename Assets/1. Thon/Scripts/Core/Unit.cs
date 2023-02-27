@@ -98,17 +98,17 @@ namespace Catze
             _isPause = false;
         }
 
-        private void OnEnable()
-        {
-            GameManager.Instance.PauseAction += PauseEvent;
-            GameManager.Instance.ResumeAction += ResumeEvent;
-        }
+        //private void OnEnable()
+        //{
+        //    GameManager.Instance.PauseAction += PauseEvent;
+        //    GameManager.Instance.ResumeAction += ResumeEvent;
+        //}
 
-        private void OnDisable()
-        {
-            GameManager.Instance.PauseAction -= PauseEvent;
-            GameManager.Instance.ResumeAction -= ResumeEvent;
-        }
+        //private void OnDisable()
+        //{
+        //    GameManager.Instance.PauseAction -= PauseEvent;
+        //    GameManager.Instance.ResumeAction -= ResumeEvent;
+        //}
 
         protected virtual void Awake()
         {
@@ -176,7 +176,7 @@ namespace Catze
             part.SetUpperUnit(this);
         }
 
-        public void AddState(UnitState state)
+        public void AddState<T>(T state) where T : UnitState
         {
             if (_states == null)
             {
@@ -184,6 +184,7 @@ namespace Catze
             }
 
             _states.Add(state);
+
             state.SetUpperUnit(this);
         }
 

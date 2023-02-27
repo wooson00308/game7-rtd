@@ -12,9 +12,11 @@ namespace Catze
         [SerializeField] private TowerTier _tier;
         [SerializeField] private float _buildWeightRate;
         [SerializeField] private int _cost;
+        [SerializeField] private GameObject _pfGradeColor;
         public int Id => _id;
         public TowerTier Tier => _tier;
         public float BuildWeightRate => _buildWeightRate;
         public int Cost => _cost;
+        public GameObject PfGradeColor => _pfGradeColor;
     }
 }

@@ -15,3 +15,5 @@ MonoBehaviour:
   _id: 30008
   _tier: 8
   _buildWeightRate: 0.07
+  _cost: 0
+  _pfGradeColor: {fileID: 602784485575602489, guid: 25cc9dc82d64dcc45a0bc3cdeba541cf, type: 3}

@@ -60,14 +60,14 @@ namespace Catze
 
                 if (_attacker.SOTower.IsAtkSplash)
                 {
-                    StageManager.Instance.OnMonsterSplashDamage(_attacker.AttackPart.AttackDamage);
+                    StageManager.Instance.OnMonsterSplashDamage(_attacker.AttackPart.AttackDamageOrCrt);
                 }
 
                 else
                 {
                     if (!_target.DeathState.IsDeath)
                     {
-                        _target.HealthPart.OnDamaged(_attacker.AttackPart.AttackDamage);
+                        _target.HealthPart.OnDamaged(_attacker.AttackPart.AttackDamageOrCrt);
                     }
                 }
 

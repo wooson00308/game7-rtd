@@ -20,6 +20,8 @@ namespace Catze
         [Header("UI Manager")]
         [SerializeField] private TowerInfoPopupUI _popupInfoUnit;
         [SerializeField] private GameObject _upgradeTowerUI;
+        [SerializeField] private GameObject _gameOverUI;
+        [SerializeField] private GameObject _gameClearUI;
         [SerializeField] private TMP_Text _moneyText;
         [SerializeField] private TMP_Text _spawnTowerCostText;
         [SerializeField] private TMP_Text _timerText;
@@ -70,6 +72,30 @@ namespace Catze
         {
             HideTowerInfo();
             HideUpgradeTower();
+            HideGameClearUI();
+            HideGameOverUI();
+        }
+
+        public void ShowGameClearUI()
+        {
+            HideAllPopup();
+            _gameClearUI.SetActive(true);
+        }
+
+        public void HideGameClearUI()
+        {
+            _gameClearUI.SetActive(false);
+        }
+
+        public void ShowGameOverUI()
+        {
+            HideAllPopup();
+            _gameOverUI.SetActive(true);
+        }
+
+        public void HideGameOverUI()
+        {
+            _gameOverUI.SetActive(false);
         }
     }
 }
