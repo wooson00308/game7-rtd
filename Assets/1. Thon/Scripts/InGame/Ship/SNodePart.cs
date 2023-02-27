@@ -47,15 +47,7 @@ namespace Catze
 
         public void TryRandomSpawn(SO_Tower tower)
         {
-            bool isFindEmptyNode = false;
-            _nodes.ForEach(x => { 
-                if(x.IsEmptyTower)
-                {
-                    isFindEmptyNode = true;
-                }
-            });
-
-            if (!isFindEmptyNode) return;
+            if (IsNotEmptyNodes()) return;
 
             var node = _nodes[Random.Range(0, _nodes.Count)];
 
@@ -77,6 +69,19 @@ namespace Catze
                     }
                 }
             }
+        }
+
+        public bool IsNotEmptyNodes()
+        {
+            bool isNotEmptyNodes = true;
+            _nodes.ForEach(x => {
+                if (x.IsEmptyTower)
+                {
+                    isNotEmptyNodes = false;
+                }
+            });
+
+            return isNotEmptyNodes;
         }
 
         public void OnNodeSelect(Node node)

@@ -81,11 +81,22 @@ namespace Catze
 
         void GameStartEvent()
         {
-            
+            Activate();
+        }
+
+        protected override void OnFixedUpdate()
+        {
+            base.OnFixedUpdate();
+            UIManager.Instance.SetActiveSpawnButton(!_ship.NodePart.IsNotEmptyNodes());
         }
 
         public void TryBuildTower()
         {
+            if(_ship.NodePart.IsNotEmptyNodes())
+            {
+                return;    
+            }
+            
             if(_money < _spawnTowerCost)
             {
                 return;

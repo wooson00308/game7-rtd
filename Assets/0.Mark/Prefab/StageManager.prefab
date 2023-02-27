@@ -58,7 +58,7 @@ MonoBehaviour:
     _dropMoney: 0
     _moveSpeed: 0
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
     pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
     _maxMonsterSpawnCnt: 70
@@ -67,79 +67,214 @@ MonoBehaviour:
     _dropMoney: 5
     _moveSpeed: 4
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
-    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    pfMonster: {fileID: 8483571079667069865, guid: 5411a2a69279a2945897f125bebad5d9, type: 3}
     _maxMonsterSpawnCnt: 70
     _monsterHealth: 45
     _monsterShield: 0
     _dropMoney: 5
     _moveSpeed: 4
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
-    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    pfMonster: {fileID: 8483571079667069865, guid: 727d6db2ed5f95543b4d6c067a503b24, type: 3}
     _maxMonsterSpawnCnt: 70
     _monsterHealth: 71
     _monsterShield: 0
     _dropMoney: 5
     _moveSpeed: 4
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
-    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    pfMonster: {fileID: 8483571079667069865, guid: da3186b4c260e9c4199510407e69ba80, type: 3}
     _maxMonsterSpawnCnt: 70
     _monsterHealth: 151
     _monsterShield: 0
     _dropMoney: 5
     _moveSpeed: 4
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
-    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
     _maxMonsterSpawnCnt: 70
     _monsterHealth: 175
     _monsterShield: 0
     _dropMoney: 5
     _moveSpeed: 4
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
-    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    pfMonster: {fileID: 8483571079667069865, guid: 5411a2a69279a2945897f125bebad5d9, type: 3}
     _maxMonsterSpawnCnt: 70
     _monsterHealth: 200
     _monsterShield: 0
     _dropMoney: 5
     _moveSpeed: 4
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
-    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    pfMonster: {fileID: 8483571079667069865, guid: 727d6db2ed5f95543b4d6c067a503b24, type: 3}
     _maxMonsterSpawnCnt: 70
     _monsterHealth: 245
     _monsterShield: 0
     _dropMoney: 5
     _moveSpeed: 4
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
-    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    pfMonster: {fileID: 8483571079667069865, guid: da3186b4c260e9c4199510407e69ba80, type: 3}
     _maxMonsterSpawnCnt: 70
-    _monsterHealth: 358
+    _monsterHealth: 545
     _monsterShield: 0
     _dropMoney: 5
     _moveSpeed: 4
   - _waveName: 
-    _waveDuration: 40
+    _waveDuration: 25
     monsterPath: {fileID: 0}
-    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
     _maxMonsterSpawnCnt: 70
-    _monsterHealth: 350
+    _monsterHealth: 684
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 890
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 1320
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 1665
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 2285
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 2605
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 3405
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 4220
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 3950
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 4250
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 5535
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 6046
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 6500
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 8990
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 10400
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 25
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: a798495b0fcd4024f99cb49a99ddd2ff, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 11349
     _monsterShield: 0
     _dropMoney: 5
     _moveSpeed: 4
   _monsterParent: {fileID: 0}
-  _maxMonsterCount: 150
+  _maxMonsterCount: 100
   _maxWarningTime: 5
   _spawnDelay: 0.2
   _waveText: {fileID: 0}

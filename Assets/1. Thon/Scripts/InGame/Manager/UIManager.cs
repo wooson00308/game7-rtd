@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Catze
 {
@@ -25,6 +26,7 @@ namespace Catze
         [SerializeField] private TMP_Text _moneyText;
         [SerializeField] private TMP_Text _spawnTowerCostText;
         [SerializeField] private TMP_Text _timerText;
+        [SerializeField] private Button _spawnButton;  
 
         public void SetTimer(float time)
         {
@@ -96,6 +98,11 @@ namespace Catze
         public void HideGameOverUI()
         {
             _gameOverUI.SetActive(false);
+        }
+
+        public void SetActiveSpawnButton(bool value)
+        {
+            _spawnButton.interactable = value;
         }
     }
 }
