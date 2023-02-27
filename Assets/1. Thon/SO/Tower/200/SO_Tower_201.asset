@@ -18,9 +18,8 @@ MonoBehaviour:
   _increaseLevelAtkDamage: 10
   _atkSpeed: 2
   _atkRange: 5
-  _atkSplash: 0
   _sptTower: {fileID: 21300000, guid: a4ccd016c14e40a408b4619cff808bbc, type: 3}
-  _pfTowerModel: {fileID: 4167702230187793359, guid: 6f6d0b03ebc50784ab741d857f72598a, type: 3}
+  _pfTowerModel: {fileID: 4167702230187793359, guid: be0682e66904a9b4bb0b3132ffac71a8, type: 3}
   _pfProjectile: {fileID: 1382132935896882121, guid: aaaf92699c42dda48886952675917a87, type: 3}
   _pfTower: {fileID: 4325536161990935968, guid: 836c7fe01ca65ea4f8da105c5c4fb1af, type: 3}
   _atkCrtRate: 10
