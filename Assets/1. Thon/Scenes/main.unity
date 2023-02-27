@@ -818,24 +818,21 @@ MonoBehaviour:
     _towerUpgradeCostText: {fileID: 1385767713}
     _towerUpgradeLevelText: {fileID: 105093010}
     _upgradeButton: {fileID: 1150206377}
-    _cost: 100
-    _levelPerCost: 20
+    _cost: 0
     _level: 1
   - _influence: 200
     _towerUpgradeCostText: {fileID: 597619767}
     _towerUpgradeLevelText: {fileID: 2146395478}
     _upgradeButton: {fileID: 240141766}
-    _cost: 100
-    _levelPerCost: 20
+    _cost: 0
     _level: 1
   - _influence: 300
     _towerUpgradeCostText: {fileID: 1904844905}
     _towerUpgradeLevelText: {fileID: 1821038546}
     _upgradeButton: {fileID: 695208661}
-    _cost: 100
-    _levelPerCost: 20
+    _cost: 0
     _level: 1
-  _maxUpgradeLevel: 100
+  _maxUpgradeLevel: 10
   _startMoney: 300
   _spawnTowerCost: 100
 --- !u!1 &202314841

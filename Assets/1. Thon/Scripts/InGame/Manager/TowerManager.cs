@@ -35,7 +35,6 @@ namespace Catze
 
             [Header("Status")]
             public int _cost;
-            public int _levelPerCost;
             public int _level;
         }
 
@@ -143,7 +142,6 @@ namespace Catze
             }
 
             _money -= _buildTierInfo.Cost;
-            UIManager.Instance.SetMoney(_money);
 
             var buildInfluenceTier = _soTowerBuild.GetBuildTierInfo(tier);
             if (buildInfluenceTier != null)
@@ -170,18 +168,6 @@ namespace Catze
             {
                 return;
             }
-
-            if(_money < upgrade._cost)
-            {
-                Log($"Not Enough Money! : {_money} < {upgrade._cost}");
-                return;
-            }
-
-            _money -= upgrade._cost;
-            UIManager.Instance.SetMoney(_money);
-
-            upgrade._cost += upgrade._levelPerCost;
-            upgrade._towerUpgradeCostText.text = upgrade._cost.ToString();
 
             upgrade._level++;
             upgrade._towerUpgradeLevelText.text = $"Lv. {upgrade._level}";
