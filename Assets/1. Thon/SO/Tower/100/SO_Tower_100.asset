@@ -10,28 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 813ef203c98f4214aaf54b1e082f6c77, type: 3}
-  m_Name: SO_Tower_200
+  m_Name: SO_Tower_100
   m_EditorClassIdentifier: 
-<<<<<<<< HEAD:Assets/1. Thon/SO/Tower/100/SO_Tower_100.asset
   _influence: 100
   _tier: 0
   _atkDamage: 3
   _increaseLevelAtkDamage: 3
   _atkSpeed: 2
   _atkRange: 4
-  _atkSplash: 0
   _sptTower: {fileID: 21300000, guid: 01dede1a7129f564ca85a7b00ae7af74, type: 3}
-  _pfTowerModel: {fileID: 6826973098777784204, guid: dca9dcfaa0940db439b7b8bec929a0b1, type: 3}
-========
-  _influence: 200
-  _tier: 0
-  _atkDamage: 8
-  _increaseLevelAtkDamage: 8
-  _atkSpeed: 2
-  _atkRange: 4
-  _sptTower: {fileID: 21300000, guid: a4ccd016c14e40a408b4619cff808bbc, type: 3}
-  _pfTowerModel: {fileID: 4167702230187793359, guid: be0682e66904a9b4bb0b3132ffac71a8, type: 3}
->>>>>>>> 10:Assets/1. Thon/SO/Tower/200/SO_Tower_200.asset
+  _pfTowerModel: {fileID: 6826973098777784204, guid: 69e560fdef88281498aeacecb6db00d4, type: 3}
   _pfProjectile: {fileID: 1382132935896882121, guid: aaaf92699c42dda48886952675917a87, type: 3}
   _pfTower: {fileID: 4325536161990935968, guid: 836c7fe01ca65ea4f8da105c5c4fb1af, type: 3}
   _atkCrtRate: 10
@@ -40,3 +28,4 @@ MonoBehaviour:
   _sellGold: 30
   _ascendRate: 50
   _soTowerAnimation: {fileID: 11400000, guid: c9b5d8c52fe835b4eb6471c00db18fab, type: 2}
+  _buildTierInfo: {fileID: 11400000, guid: fb8bd4c8a40db5343a564765549b0a33, type: 2}

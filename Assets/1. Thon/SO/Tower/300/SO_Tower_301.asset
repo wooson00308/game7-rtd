@@ -28,3 +28,4 @@ MonoBehaviour:
   _sellGold: 60
   _ascendRate: 33.1
   _soTowerAnimation: {fileID: 11400000, guid: c9b5d8c52fe835b4eb6471c00db18fab, type: 2}
+  _buildTierInfo: {fileID: 11400000, guid: a0b810c50c6f697478364a655720008e, type: 2}

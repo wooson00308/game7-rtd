@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3339419412018368186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3339419412018368187}
+  - component: {fileID: 3339419412018368184}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3339419412018368187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339419412018368186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3339419412018368184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339419412018368186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3689185cde0eb44479bc1ecc3f780366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onLogMode: 0
+  onLogWarningMode: 0
+  onLogErrorMode: 0
+  _waves:
+  - _waveName: REST
+    _waveDuration: 5
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 0
+    _monsterHealth: 0
+    _monsterShield: 0
+    _dropMoney: 0
+    _moveSpeed: 0
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 13
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 45
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 71
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 151
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 175
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 200
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 245
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 358
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  - _waveName: 
+    _waveDuration: 40
+    monsterPath: {fileID: 0}
+    pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+    _maxMonsterSpawnCnt: 70
+    _monsterHealth: 350
+    _monsterShield: 0
+    _dropMoney: 5
+    _moveSpeed: 4
+  _monsterParent: {fileID: 0}
+  _maxMonsterCount: 150
+  _maxWarningTime: 5
+  _spawnDelay: 0.2
+  _waveText: {fileID: 0}
+  _waveMonsterCntText: {fileID: 0}
+  _waveMaxMonsterCntText: {fileID: 0}
+  _warningObject: {fileID: 0}

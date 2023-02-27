@@ -15,3 +15,4 @@ MonoBehaviour:
   _id: 30006
   _tier: 5
   _buildWeightRate: 0.5
+  _cost: 300

@@ -26,6 +26,7 @@ namespace Catze
         [SerializeField] protected int _sellGold;
         [SerializeField] protected float _ascendRate;
         [SerializeField] protected SO_TAnimation _soTowerAnimation;
+        [SerializeField] protected SO_BuildTierInfo _buildTierInfo;
 
         public int Id => 100000 + InfluenceInt + (int)_tier;
         public Influence Influence => _influence;
@@ -49,5 +50,7 @@ namespace Catze
         public int SellCost => _sellGold;
         public float AcendRate => _ascendRate;
         public SO_TAnimation SOTAnimation => _soTowerAnimation;
+
+        public int AcendCost => _buildTierInfo.Cost;
     }
 }

@@ -28,6 +28,8 @@ namespace Catze
         
         [SerializeField] private Button _acendButton;
         [SerializeField] private TMP_Text _ascendRateText;
+
+        [SerializeField] private TMP_Text _acendCostText;
  
         public bool ActiveSelf => gameObject.activeSelf;
 
@@ -58,6 +60,8 @@ namespace Catze
             _atkRangeText.text = param.tower.AtkRange.ToString();
             _atkCrtRateText.text = param.tower.AtkCrtRate.ToString();
             _atkCrtDamageText.text = param.tower.AtkCrtDamage.ToString();
+
+            _acendCostText.text = param.tower.AcendCost.ToString();
 
             _sellButton.gameObject.SetActive(param.tower.CanSell);
             if (param.tower.CanSell)
