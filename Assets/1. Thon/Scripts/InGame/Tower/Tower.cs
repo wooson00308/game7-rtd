@@ -72,6 +72,10 @@ namespace Catze
         public void Sell()
         {
             TowerManager.Instance.AddMoney(_soTower.SellCost);
+        }
+
+        public void Destroy()
+        {
             Destroy(gameObject);
         }
     }

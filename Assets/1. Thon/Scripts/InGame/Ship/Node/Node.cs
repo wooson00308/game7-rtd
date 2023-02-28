@@ -38,8 +38,11 @@ namespace Catze
             _isEmptyTower = false;
 
             _tower = Instantiate(soTower.PfTower, _towerSpawnPoint);
+            TowerManager.Instance.AddTower(_tower);
+            
             _tower.SetSOTower(soTower);
             _tower.SetNode(this);
+            
 
             return true;
         }
@@ -56,8 +59,7 @@ namespace Catze
 
             if(soTower != null)
             {
-                Destroy(_tower.gameObject);
-                _isEmptyTower = true;
+                DestroyTower();
 
                 SpawnTower(soTower);
 
@@ -69,7 +71,7 @@ namespace Catze
             return false;
         }
 
-        public bool SellTower()
+        public bool SellTower(bool removeTowerManager = true)
         {
             if (_isEmptyTower)
             {
@@ -77,12 +79,21 @@ namespace Catze
                 return false;
             }
 
-            _isEmptyTower = true;
-
             _tower.Sell();
-            _tower = null;
+            DestroyTower(removeTowerManager);
 
             return true;
+        }
+
+        void DestroyTower(bool removeTowerManager = true)
+        {
+            if (removeTowerManager)
+                TowerManager.Instance.RemoveTower(_tower);
+            
+            _tower.Destroy();
+            _tower = null;
+
+            _isEmptyTower = true;
         }
 
         public void OnTouchNode()
