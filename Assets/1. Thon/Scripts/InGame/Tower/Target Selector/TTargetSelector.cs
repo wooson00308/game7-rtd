@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Catze
@@ -11,15 +12,23 @@ namespace Catze
 
         [Header("Tower Target Selector")]
         [SerializeField] private CircleCollider2D _collider;
+        [SerializeField] private GameObject _model;
+        
         private float _range;
 
-        private List<Monster> _targetList = new List<Monster>();
+        private List<Monster> _targets = new List<Monster>();
 
         public void SetRange(float range) => _range = range;
+        public void SetRangeModel(bool value) => _model.SetActive(value);
+
+        private Vector2 defaultModelScale;
 
         protected override void Awake()
         {
             base.Awake();
+
+            defaultModelScale = _model.transform.localScale;
+            SetRangeModel(false);
 
             Activate();
         }
@@ -29,17 +38,57 @@ namespace Catze
             base.OnFixedUpdate();
 
             _collider.radius = _range;
+            
+            if(_model.activeSelf)
+            {
+                _model.transform.localScale = defaultModelScale * _range;
+            }
 
             SearchTarget();
         }
 
         void SearchTarget()
         {
+            // 타겟 우선순위 검색
+            if (TouchRange.TopPriorityMonsters.Count > 0)
+            {
+                var tpTargets = TouchRange.TopPriorityMonsters.ToList();
+
+                var removeTargets = new List<Monster>();
+
+                foreach (var tpTarget in tpTargets)
+                {
+                    if (tpTarget == null) continue;
+                    if(!_targets.Contains(tpTarget))
+                    {
+                        removeTargets.Add(tpTarget);
+                    }
+                }
+
+                foreach(var remove in removeTargets)
+                {
+                    tpTargets.Remove(remove);
+                }
+                
+                if(SetMinDistanceTarget(tpTargets))
+                {
+                    return;
+                }
+            }
+            
+            SetMinDistanceTarget(_targets);
+        }
+
+        bool SetMinDistanceTarget(List<Monster> list)
+        {
+            if (list.Count == 0) return false;
+            
+            // 가장 가까운 타겟 검색
             Monster minTarget = null;
 
             float minDistance = 999;
-
-            foreach (var target in _targetList)
+            
+            foreach (var target in list)
             {
                 if (target == null) continue;
 
@@ -55,6 +104,8 @@ namespace Catze
             {
                 _target = minTarget;
             }
+
+            return minTarget != null;
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D col)
@@ -62,13 +113,17 @@ namespace Catze
             var monster = col.gameObject.GetComponentInParent<Monster>();
             if (monster != null)
             {
-                _targetList.Add(monster);
+                _targets.Add(monster);
             }
         }
 
         protected virtual void OnTriggerExit2D(Collider2D col)
         {
-            _targetList.Remove(col.GetComponentInParent<Monster>());
+            var monster = col.gameObject.GetComponentInParent<Monster>();
+            if (monster != null)
+            {
+                _targets.Remove(monster);
+            }
         }
     }
 }

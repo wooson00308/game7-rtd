@@ -19,8 +19,6 @@ namespace Catze
 
         [SerializeField] private SO_TowerBuild _soTowerBuild;
 
-        [SerializeField] private List<Tower> testTowers;
-
         [Serializable]
         public class TowerUpgrade
         {
@@ -57,6 +55,16 @@ namespace Catze
         private Ship _ship;
 
         public Ship Ship => _ship;
+
+        public void AddTower(Tower tower)
+        {
+            TowerStorage.Instance.Add(tower);
+        }
+
+        public void RemoveTower(Tower tower)
+        {
+            TowerStorage.Instance.Remove(tower);
+        }
 
         void GamePrepareEvent()
         {
@@ -173,7 +181,6 @@ namespace Catze
             return null;
         }
 
-
         private void UpgradeTower(TowerUpgrade upgrade)
         {
             UIManager.Instance.HideTowerInfo();
@@ -224,6 +231,47 @@ namespace Catze
         {
             _money += money;
             UIManager.Instance.SetMoney(_money);
+        }
+
+        public void BulkSell(List<Influence> influences, List<TowerTier> tiers)
+        {
+            List<Tower> towers = new List<Tower>();
+
+            foreach(var tower in TowerStorage.Instance.BuildTowers)
+            {
+                bool validInfluence = false;
+                foreach(var influence in influences)
+                {
+                    if (tower.SOTower.Influence.Equals(influence))
+                    {
+                        validInfluence = true;
+                        break;
+                    }
+                }
+
+                bool validTier = false;
+                foreach (var tier in tiers)
+                {
+                    if (tower.SOTower.Tier.Equals(tier))
+                    {
+                        validTier = true;
+                        break;
+                    }
+                }
+
+                if (validInfluence && validTier)
+                {
+                    var node = tower.UpperUnit.GetComponent<Node>();
+                    node.SellTower(false);
+
+                    towers.Add(tower);
+                }
+            }
+            
+            foreach(var tower in towers)
+            {
+                RemoveTower(tower);
+            }
         }
 
         protected override void DelayEnable()

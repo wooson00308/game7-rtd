@@ -56,24 +56,26 @@ namespace Catze
         
         [SerializeField] Button _sellButton;
 
-        Dictionary<int, DetailButtonUI> _influenceButtons = new Dictionary<int, DetailButtonUI>();
+        Dictionary<Influence, DetailButtonUI> _influenceButtons = new Dictionary<Influence, DetailButtonUI>();
         Dictionary<TowerTier, DetailButtonUI> _tierButtons = new Dictionary<TowerTier, DetailButtonUI>();
-        
+
 
         protected override void Awake()
         {
             base.Awake();
 
-            _influenceButtons.Add(100, _nifeInfluence);
-            _influenceButtons.Add(200, _gunInfluence);
-            _influenceButtons.Add(300, _lanceInfluence);
+            _influenceButtons.Add(Influence.Nife, _nifeInfluence);
+            _influenceButtons.Add(Influence.Gun, _gunInfluence);
+            _influenceButtons.Add(Influence.Lance, _lanceInfluence);
 
             _tierButtons.Add(TowerTier.Common, _commonTier);
             _tierButtons.Add(TowerTier.Rare, _rareTier);
             _tierButtons.Add(TowerTier.Heroic, _heroicTier);
             _tierButtons.Add(TowerTier.Legend, _legendTier);
 
-            foreach(var pair in _influenceButtons)
+            _sellButton.onClick.AddListener(() => BulkSell());
+
+            foreach (var pair in _influenceButtons)
             {
                 var value = pair.Value;
                 value.SetImage();
@@ -90,9 +92,11 @@ namespace Catze
                 var btn = pair.Value.button;
                 btn.onClick.AddListener(() => ToggleTierButton(pair.Key));
             }
+
+            gameObject.SetActive(false);
         }
 
-        void ToggleInfluenceButton(int id)
+        void ToggleInfluenceButton(Influence id)
         {
             var toggleBtn = _influenceButtons[id];
 
@@ -140,6 +144,32 @@ namespace Catze
             {
                 toggleBtn.Toggle();
             }
+        }
+
+        void BulkSell()
+        {
+            List<Influence> influences = new List<Influence>();
+            List<TowerTier> tiers = new List<TowerTier>();
+
+            foreach(var inf in _influenceButtons)
+            {
+                var value = inf.Value;
+                if(value.IsSelected)
+                {
+                    influences.Add(inf.Key);
+                }
+            }
+
+            foreach (var tier in _tierButtons)
+            {
+                var value = tier.Value;
+                if (value.IsSelected)
+                {
+                    tiers.Add(tier.Key);
+                }
+            }
+
+            TowerManager.Instance.BulkSell(influences, tiers);
         }
     }
 }

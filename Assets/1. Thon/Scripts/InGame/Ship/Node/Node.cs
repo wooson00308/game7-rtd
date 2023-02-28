@@ -8,9 +8,7 @@ namespace Catze
     public class Node : Unit
     {
         private SNodePart SNodePart => UpperUnit as SNodePart;
-
-        private bool _isSelected = false;
-
+        
         [Header("Node")]
         [SerializeField] private bool _isEmptyTower = true;
         [SerializeField] private Tower _tower;
@@ -41,6 +39,8 @@ namespace Catze
             _tower.SetSOTower(soTower);
             _tower.SetNode(this);
 
+            TowerManager.Instance.AddTower(_tower);
+
             return true;
         }
 
@@ -56,8 +56,7 @@ namespace Catze
 
             if(soTower != null)
             {
-                Destroy(_tower.gameObject);
-                _isEmptyTower = true;
+                DestroyTower();
 
                 SpawnTower(soTower);
 
@@ -69,7 +68,7 @@ namespace Catze
             return false;
         }
 
-        public bool SellTower()
+        public bool SellTower(bool removeTowerManager = true)
         {
             if (_isEmptyTower)
             {
@@ -77,12 +76,21 @@ namespace Catze
                 return false;
             }
 
-            _isEmptyTower = true;
-
             _tower.Sell();
-            _tower = null;
+            DestroyTower(removeTowerManager);
 
             return true;
+        }
+
+        void DestroyTower(bool removeTowerManager = true)
+        {
+            if (removeTowerManager)
+                TowerManager.Instance.RemoveTower(_tower);
+            
+            _tower.Destroy();
+            _tower = null;
+
+            _isEmptyTower = true;
         }
 
         public void OnTouchNode()
@@ -100,6 +108,11 @@ namespace Catze
         public void SetSelect(bool value = true)
         {
             TryPopupTowerInfo(value);
+
+            if (_tower != null)
+            {
+                _tower.AttackPart.SetAttackRangeModel(value);
+            }
 
             if (value)
             {

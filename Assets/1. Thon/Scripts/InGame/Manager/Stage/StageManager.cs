@@ -47,6 +47,7 @@ namespace Catze
 
         [Space]
 
+        private int _curWaveIndex;
         private int _monsterCount;
         private bool _isCOWarningCount;
         private bool _isWarningState;
@@ -135,10 +136,10 @@ namespace Catze
 
         IEnumerator COStage()
         {
-            int curWaveIndex = 0;
-            while(curWaveIndex < _waves.Count)
+            _curWaveIndex = 0;
+            while(_curWaveIndex < _waves.Count)
             {
-                _curWave = _waves[curWaveIndex];
+                _curWave = _waves[_curWaveIndex];
 
                 if (!string.IsNullOrEmpty(_curWave._waveName))
                 {
@@ -146,7 +147,7 @@ namespace Catze
                 }
                 else
                 {
-                    _waveText.text = $"Wave {curWaveIndex}";
+                    _waveText.text = $"Wave {_curWaveIndex}";
                 }
 
                 StartCoroutine(COWave());
@@ -161,7 +162,7 @@ namespace Catze
                     yield return null;
                 }
 
-                curWaveIndex++;
+                _curWaveIndex++;
             }
 
             GameManager.Instance.SetStateOrNull(GameManager.ClearState);
@@ -180,6 +181,7 @@ namespace Catze
                 monster.HealthPart.SetHealth(_curWave._monsterHealth);
                 monster.HealthPart.SetShield(_curWave._monsterShield);
                 monster.SetDropMoney(_curWave._dropMoney);
+                monster.SetUnitId($"{_curWaveIndex}_{currentSpawnCnt}");
 
                 _monsterCount++;
                 monster.DeathState.OnMonsterDeathEvent += OnMonsterDeathEvent;

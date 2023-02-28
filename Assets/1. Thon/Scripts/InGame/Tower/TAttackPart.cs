@@ -58,6 +58,7 @@ namespace Catze
         }
 
         private TTargetSelector _targetSelector;
+        public void SetAttackRangeModel(bool value) => _targetSelector.SetRangeModel(value);
 
         public Monster Target => _targetSelector.Target;
 

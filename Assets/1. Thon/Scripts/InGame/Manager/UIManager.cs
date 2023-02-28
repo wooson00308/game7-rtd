@@ -27,7 +27,8 @@ namespace Catze
         [SerializeField] private TMP_Text _moneyText;
         [SerializeField] private TMP_Text _spawnTowerCostText;
         [SerializeField] private TMP_Text _timerText;
-        [SerializeField] private Button _spawnButton;  
+        [SerializeField] private Button _spawnButton;
+        [SerializeField] private GameObject _touchRangeUI;
 
         public void SetTimer(float time)
         {
@@ -125,6 +126,16 @@ namespace Catze
         public void SetActiveSpawnButton(bool value)
         {
             _spawnButton.interactable = value;
+        }
+
+        public void SetActiveTouchRangeUI(bool value)
+        {
+            _touchRangeUI.SetActive(value);
+        }
+
+        public void MoveTouchRangeUI(Vector3 position)
+        {
+            _touchRangeUI.transform.position = position;
         }
     }
 }

@@ -7,6 +7,14 @@ namespace Catze
     [DisallowMultipleComponent]
     public class Unit : MonoBehaviour
     {
+        protected string _unitId;
+        public string UnitId => _unitId;
+
+        public void SetUnitId(string id)
+        {
+            _unitId = id;
+        }
+
         protected int _id;
         protected string _displayName;
 

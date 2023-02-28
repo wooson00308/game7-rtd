@@ -38,7 +38,6 @@ namespace Catze
 
         public void SetSOTower(SO_Tower soTower)
         {
-            Debug.Log($"{soTower.DisplayName}");
             _soTower = soTower;
         }
 
@@ -72,6 +71,10 @@ namespace Catze
         public void Sell()
         {
             TowerManager.Instance.AddMoney(_soTower.SellCost);
+        }
+
+        public void Destroy()
+        {
             Destroy(gameObject);
         }
     }
