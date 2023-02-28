@@ -1,12 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using static UnityEditor.PlayerSettings;
-using UnityEngine.UI;
-using System;
-using JetBrains.Annotations;
-using UnityEngine.UIElements;
+
 
 namespace Catze
 {
@@ -23,19 +16,21 @@ namespace Catze
         protected override void OnFixedUpdate()
         {
             base.OnFixedUpdate();
-            
-#if UNITY_ANDROID
-            if (Input.touches.Length <= 0) return;
 
-            for (int i = 0; i < Input.touchCount; i++)
+#if UNITY_ANDROID
+            if (Input.touches.Length > 0)
             {
-                if (Input.GetTouch(i).phase == TouchPhase.Began)
+                int index = 0;
+                foreach(var touch in Input.touches)
                 {
-                    OnTouch();
+                    OnTouchStay(index++);
                 }
             }
-#endif
-
+            else
+            {
+                OnTouchExit();
+            }
+#elif UNITY_EDITOR
             if (Input.GetMouseButtonDown(0))
             {
                 OnTouchEnter();
@@ -49,12 +44,17 @@ namespace Catze
             {
                 OnTouchExit();
             }
+#endif
         }
 
-        bool ValidTouchTag()
+        bool ValidTouchTag(int index = 0)
         {
+#if UNITY_ANDROID
+            _pos = Camera.main.ScreenToWorldPoint(Input.touches[index].position);
+#elif UNITY_EDITOR
             _pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
+#endif
+
             Ray2D ray = new Ray2D(_pos, Vector2.zero);
             int layerMask = (-1) - (1 << LayerMask.NameToLayer("Tower Range"));
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, layerMask);
@@ -72,7 +72,7 @@ namespace Catze
             UIManager.Instance.SetActiveTouchRangeUI(ValidTouchTag());
         }
 
-        void OnTouchStay()
+        void OnTouchStay(int index = 0)
         {
             UIManager.Instance.SetActiveTouchRangeUI(ValidTouchTag());
             UIManager.Instance.MoveTouchRangeUI(_pos);

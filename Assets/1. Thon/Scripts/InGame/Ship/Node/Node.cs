@@ -36,11 +36,8 @@ namespace Catze
             _isEmptyTower = false;
 
             _tower = Instantiate(soTower.PfTower, _towerSpawnPoint);
-            TowerManager.Instance.AddTower(_tower);
-            
             _tower.SetSOTower(soTower);
             _tower.SetNode(this);
-            
 
             TowerManager.Instance.AddTower(_tower);
 

@@ -37,7 +37,7 @@ namespace Catze
         {
             base.OnFixedUpdate();
 
-            _collider.radius = _range;
+            _collider.radius = _range / 2;
             
             if(_model.activeSelf)
             {
@@ -45,6 +45,11 @@ namespace Catze
             }
 
             SearchTarget();
+        }
+
+        private void OnDrawGizmos()
+        {
+            UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.back, GetComponent<CircleCollider2D>().radius);
         }
 
         void SearchTarget()

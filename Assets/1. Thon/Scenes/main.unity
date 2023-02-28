@@ -1679,7 +1679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d52d61a23207148aa0cc09fd5ebbad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onLogMode: 1
+  onLogMode: 0
   onLogWarningMode: 0
   onLogErrorMode: 0
 --- !u!1 &420767175
