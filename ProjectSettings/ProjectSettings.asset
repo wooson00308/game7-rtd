@@ -250,8 +250,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{dedicated}: user.catze.keystore'
-  AndroidKeyaliasName: catzelabs
+  AndroidKeystoreName: '{inproject}: user.keystore_Mark.keystore'
+  AndroidKeyaliasName: mark
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
