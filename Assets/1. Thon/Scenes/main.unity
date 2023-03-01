@@ -1147,7 +1147,7 @@ MonoBehaviour:
     _levelPerCost: 20
     _level: 1
   _maxUpgradeLevel: 100
-  _startMoney: 400
+  _startMoney: 5000
   _spawnTowerCost: 80
 --- !u!1 &202314841
 GameObject:
@@ -8352,6 +8352,10 @@ PrefabInstance:
     - target: {fileID: 3339419412018368184, guid: 8f67d52e238331146b0c6b94e7c41bee, type: 3}
       propertyPath: _waves.Array.data[19]._waveDuration
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339419412018368184, guid: 8f67d52e238331146b0c6b94e7c41bee, type: 3}
+      propertyPath: _waves.Array.data[1]._monsterHealth
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3339419412018368184, guid: 8f67d52e238331146b0c6b94e7c41bee, type: 3}
       propertyPath: _waves.Array.data[20]._waveDuration

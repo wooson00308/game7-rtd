@@ -13,6 +13,7 @@ namespace Catze
         [Header("Tower Target Selector")]
         [SerializeField] private CircleCollider2D _collider;
         [SerializeField] private GameObject _model;
+        [SerializeField] private TargetLine _targetLine;
         
         private float _range;
 
@@ -77,16 +78,24 @@ namespace Catze
                     tpTargets.Remove(remove);
                 }
                 
-                if(SetMinDistanceTarget(tpTargets))
+                if (SetMinDistanceTarget(tpTargets, TouchRange.RangeTr))
                 {
+                    _targetLine.gameObject.SetActive(true);
+                    _targetLine.SetTargetOrNull(_target);
                     return;
                 }
+            }
+            
+            if (_targetLine.gameObject.activeSelf)
+            {
+                _targetLine.SetTargetOrNull(null);
+                _targetLine.gameObject.SetActive(false);
             }
             
             SetMinDistanceTarget(_targets);
         }
 
-        bool SetMinDistanceTarget(List<Monster> list)
+        bool SetMinDistanceTarget(List<Monster> list, Transform distanceTr = null)
         {
             if (list.Count == 0) return false;
             
@@ -99,7 +108,9 @@ namespace Catze
             {
                 if (target == null) continue;
 
-                float distance = Vector2.Distance(transform.position, target.transform.position);
+                var tr = distanceTr == null ? transform : distanceTr;
+
+                float distance = Vector2.Distance(tr.position, target.transform.position);
                 if (minDistance > distance)
                 {
                     minDistance = distance;
