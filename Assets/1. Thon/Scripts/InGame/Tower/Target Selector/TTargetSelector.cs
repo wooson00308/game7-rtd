@@ -47,10 +47,12 @@ namespace Catze
             SearchTarget();
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.back, GetComponent<CircleCollider2D>().radius);
         }
+#endif
 
         void SearchTarget()
         {
