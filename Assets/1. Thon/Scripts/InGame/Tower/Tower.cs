@@ -38,7 +38,6 @@ namespace Catze
 
         public void SetSOTower(SO_Tower soTower)
         {
-            Debug.Log($"{soTower.DisplayName}");
             _soTower = soTower;
         }
 

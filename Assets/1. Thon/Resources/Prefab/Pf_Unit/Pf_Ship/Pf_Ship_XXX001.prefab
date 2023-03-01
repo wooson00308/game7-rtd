@@ -2054,6 +2054,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8431235960485284948}
     m_Modifications:
+    - target: {fileID: 2909096371883346592, guid: 95c3a7353bce790489315333bfd2292e, type: 3}
+      propertyPath: m_TagString
+      value: Ship
+      objectReference: {fileID: 0}
     - target: {fileID: 5641985301028517685, guid: 95c3a7353bce790489315333bfd2292e, type: 3}
       propertyPath: m_Name
       value: Pf_Ship_XXX001

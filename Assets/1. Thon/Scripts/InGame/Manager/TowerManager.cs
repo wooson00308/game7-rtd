@@ -56,16 +56,14 @@ namespace Catze
 
         public Ship Ship => _ship;
 
-        private List<Tower> _buildTowers = new List<Tower>();
-
         public void AddTower(Tower tower)
         {
-            _buildTowers.Add(tower);
+            TowerStorage.Instance.Add(tower);
         }
 
         public void RemoveTower(Tower tower)
         {
-            _buildTowers.Remove(tower);
+            TowerStorage.Instance.Remove(tower);
         }
 
         void GamePrepareEvent()
@@ -239,7 +237,7 @@ namespace Catze
         {
             List<Tower> towers = new List<Tower>();
 
-            foreach(var tower in _buildTowers)
+            foreach(var tower in TowerStorage.Instance.BuildTowers)
             {
                 bool validInfluence = false;
                 foreach(var influence in influences)

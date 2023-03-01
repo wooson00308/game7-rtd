@@ -8,9 +8,7 @@ namespace Catze
     public class Node : Unit
     {
         private SNodePart SNodePart => UpperUnit as SNodePart;
-
-        private bool _isSelected = false;
-
+        
         [Header("Node")]
         [SerializeField] private bool _isEmptyTower = true;
         [SerializeField] private Tower _tower;
@@ -38,11 +36,10 @@ namespace Catze
             _isEmptyTower = false;
 
             _tower = Instantiate(soTower.PfTower, _towerSpawnPoint);
-            TowerManager.Instance.AddTower(_tower);
-            
             _tower.SetSOTower(soTower);
             _tower.SetNode(this);
-            
+
+            TowerManager.Instance.AddTower(_tower);
 
             return true;
         }
@@ -111,6 +108,11 @@ namespace Catze
         public void SetSelect(bool value = true)
         {
             TryPopupTowerInfo(value);
+
+            if (_tower != null)
+            {
+                _tower.AttackPart.SetAttackRangeModel(value);
+            }
 
             if (value)
             {

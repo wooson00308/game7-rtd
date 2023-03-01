@@ -77,5 +77,10 @@ namespace Catze
             }
             return inputDatas[inputDatas.Length - 1];
         }
+
+        public static bool IsPointWithinCollider(Collider2D coll, Vector2 pos)
+        {
+            return coll.ClosestPoint(pos) == pos;
+        }
     }
 }
