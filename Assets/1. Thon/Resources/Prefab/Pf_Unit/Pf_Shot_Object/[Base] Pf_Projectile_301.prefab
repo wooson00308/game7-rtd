@@ -4851,7 +4851,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1108240943
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 20
   m_RenderMode: 4
   m_MeshDistribution: 0
@@ -4931,7 +4931,7 @@ MonoBehaviour:
   onLogMode: 0
   onLogWarningMode: 0
   onLogErrorMode: 0
-  _moveSpeed: 18
+  _soProjectile: {fileID: 11400000, guid: 4edfe8a41a7a96c40895c69871576f1f, type: 2}
 --- !u!1 &5689143522181882619
 GameObject:
   m_ObjectHideFlags: 0
@@ -9838,7 +9838,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1108240943
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 20
   m_RenderMode: 4
   m_MeshDistribution: 0
@@ -9979,7 +9979,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1108240943
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 25
   m_Sprite: {fileID: 21300000, guid: dacb9d4f924944346bf80603267142b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

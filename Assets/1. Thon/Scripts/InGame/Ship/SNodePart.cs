@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Catze
 {
@@ -45,7 +47,7 @@ namespace Catze
             return _nodes[id];
         }
 
-        public void TryRandomSpawn(SO_Tower tower)
+        public void TryRandomSpawn(SO_Tower tower, Action<bool> callback = null)
         {
             if (IsNotEmptyNodes()) return;
 

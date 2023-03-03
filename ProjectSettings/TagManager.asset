@@ -74,9 +74,6 @@ TagManager:
   - name: HUD
     uniqueID: 1344016133
     locked: 0
-  - name: Txt_Dmg
-    uniqueID: 2428698197
-    locked: 0
   - name: Pan
     uniqueID: 2351859507
     locked: 0
