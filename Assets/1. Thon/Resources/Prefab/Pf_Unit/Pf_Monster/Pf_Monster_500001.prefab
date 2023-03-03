@@ -55,13 +55,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8619799546022393153, guid: 5f1fdd1ea4056c54f95ebadbf00fc233, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619799546022393153, guid: 5f1fdd1ea4056c54f95ebadbf00fc233, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1fdd1ea4056c54f95ebadbf00fc233, type: 3}
---- !u!212 &2706400644604307951 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1552249485322648427, guid: 5f1fdd1ea4056c54f95ebadbf00fc233, type: 3}
-  m_PrefabInstance: {fileID: 3460351808490656388}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3555352287314516475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,10 +124,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4966508194153376338, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
-      propertyPath: _spriteRenderer
-      value: 
-      objectReference: {fileID: 2706400644604307951}
     - target: {fileID: 6694995101615832242, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_Name
       value: Pf_Monster_500001
