@@ -10,6 +10,8 @@ namespace Catze
     {
         [SerializeField] protected int _id;
         [SerializeField] protected int _influence;
+        [SerializeField] protected float _delayRecoveryTime;
+        [SerializeField] protected int _recoverySpeed;
         [SerializeField] protected MonsterType _monsterType;
         [SerializeField] protected string _displayName;
         [SerializeField] protected Sprite _sptMonster;
@@ -19,6 +21,8 @@ namespace Catze
 
         public int Id => _id;
         public int Influence => _influence;
+        public float DelayRecoveryTime => _delayRecoveryTime;
+        public int RecoverySpeed => _recoverySpeed;
         public MonsterType MonsterType => _monsterType;
         public string DisplayName => _displayName;
         public Sprite SptMonster => _sptMonster;

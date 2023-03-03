@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,17 +27,18 @@ namespace Catze
         private Projectile _projectile;
 
         public float AttackSpeed => _currentAttackSpeed;
-        public int AttackDamageOrCrt
-        {
-            get
-            {
-                if (Util.GetRateResult(_currentAttackCrtRate))
-                {
-                    Log($"Critical! {_currentAttackDamage} -> {_currentAttackCrtDamage}");
-                    return _currentAttackCrtDamage;
-                }
 
-                return AttackDamage;
+        public void AttackDamageOrCrt(Action<int, bool> callback = null)
+        {
+            if (Util.GetRateResult(_currentAttackCrtRate))
+            {
+                Log($"Critical! {_currentAttackDamage} -> {_currentAttackCrtDamage}");
+
+                callback?.Invoke(_currentAttackCrtDamage, true);
+            }
+            else
+            {
+                callback?.Invoke(AttackDamage, false);
             }
         }
 

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2291852982702684718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6473358, y: 2.6473358, z: 2.6473358}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 118245258433710230}
@@ -176,13 +176,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 855092332186117586, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 855092332186117586, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 855092332186117586, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1182737294564731498, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: _maxHealth
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2157811064622713654, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3827919561114203351, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
@@ -235,6 +247,14 @@ PrefabInstance:
     - target: {fileID: 6694995101615832242, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_Name
       value: Pf_Monster_500021
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903166442773978847, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903166442773978847, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 007407d5e4c3db34e96606c88e329797, type: 3}

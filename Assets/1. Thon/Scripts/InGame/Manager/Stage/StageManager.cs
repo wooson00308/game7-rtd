@@ -192,13 +192,13 @@ namespace Catze
             }
         }
 
-        public void OnMonsterSplashDamage(int damage)
+        public void OnMonsterSplashDamage(int damage, bool isCritical)
         {
             var monsters = _monsterParent.GetComponentsInChildren<Monster>();
             foreach(var monster in monsters)
             {
                 if (monster == null) continue;
-                monster.HealthPart.OnDamaged(damage);
+                monster.HealthPart.OnDamaged(damage, isCritical);
             }
         }
 

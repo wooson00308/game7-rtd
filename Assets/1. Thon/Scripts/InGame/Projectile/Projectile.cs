@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Catze
@@ -12,6 +13,9 @@ namespace Catze
         [Header("Projectile")]
         private Effect _attackFx;
         [SerializeField] private float _moveSpeed;
+        
+        [SerializeField] private bool _isRotate;
+        //[SerializeField] private float _rotSpeed;
 
         private Vector2 _moveVec;
 
@@ -51,8 +55,16 @@ namespace Catze
                 _moveVec = _target.transform.position;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, _moveVec, _moveSpeed * Time.fixedDeltaTime);
+            if (_isRotate)
+            {
+                var rotVec = _moveVec - (Vector2)transform.position;
 
+                float angle = Mathf.Atan2(rotVec.y, rotVec.x) * Mathf.Rad2Deg + 270; // 270 = 투사체 앞이 Y축 +를 바라보고 있기에
+                Quaternion angelAxis = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = angelAxis;//Quaternion.Slerp(transform.rotation, angelAxis, Time.deltaTime * _rotSpeed);
+            }
+
+            transform.position = Vector2.MoveTowards(transform.position, _moveVec, _moveSpeed * Time.fixedDeltaTime);
 
             if (IsDestination())
             {
@@ -60,14 +72,14 @@ namespace Catze
 
                 if (_attacker.SOTower.IsAtkSplash)
                 {
-                    StageManager.Instance.OnMonsterSplashDamage(_attacker.AttackPart.AttackDamageOrCrt);
+                    _attacker.AttackPart.AttackDamageOrCrt(StageManager.Instance.OnMonsterSplashDamage);
                 }
 
                 else
                 {
                     if (!_target.DeathState.IsDeath)
                     {
-                        _target.HealthPart.OnDamaged(_attacker.AttackPart.AttackDamageOrCrt);
+                        _attacker.AttackPart.AttackDamageOrCrt(_target.HealthPart.OnDamaged);
                     }
                 }
 

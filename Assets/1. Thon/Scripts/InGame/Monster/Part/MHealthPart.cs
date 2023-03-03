@@ -7,20 +7,29 @@ namespace Catze
 {
     public class MHealthPart : Monster.Part
     {
-        private int _currentHealth;
-        private int _maxShield;
-        private int _currentShield;
+        private float _maxHealth;
+        private float _currentHealth;
+        private float _maxShield;
+        private float _currentShield;
 
         private bool _isRunCODelayRecoveryShield = false;
-        private bool _isRunCORecoveryShield = false;
+        private bool _canRecoveryShield = false;
+        private bool _isDeath = false;
 
-        [SerializeField] float _delayRecoveryShieldTime;
+        float _delayRecoveryShieldTime;
+        float _maxShieldAlpha;
 
         private float _currentDelayRecoveryShieldTime;
-
+        [SerializeField] SpriteRenderer _shieldObject;
+        [SerializeField] StatusSlider _statusSlider;
+        [SerializeField] GameObject _pfDamagePopup;
+        
         protected override void Awake()
         {
             base.Awake();
+
+            _delayRecoveryShieldTime = Upper.SOMonster.DelayRecoveryTime;
+            _maxShieldAlpha = _shieldObject.color.a;
 
             Activate();
         }
@@ -29,50 +38,62 @@ namespace Catze
         {
             base.OnFixedUpdate();
 
-            if(!_isRunCODelayRecoveryShield)
+            _shieldObject.gameObject.SetActive(_currentShield > 0);
+            _statusSlider.SetHP(_currentHealth / _maxHealth * 1f);
+
+            if (_maxShield > 0)
             {
-                if (_currentShield < _maxShield)
+                _statusSlider.SetSheild(_currentShield / _maxShield * 1f);
+
+                _shieldObject.color = new Color(_shieldObject.color.r, _shieldObject.color.g, _shieldObject.color.b, _currentShield / _maxShield * _maxShieldAlpha);
+
+                if (_canRecoveryShield)
                 {
-                    StartCoroutine(CODelayRecoveryShield());
+                    if (_currentShield < _maxShield)
+                    {
+                        _currentShield += Upper.SOMonster.RecoverySpeed * Time.fixedDeltaTime;
+                    }
+                    else
+                    {
+                        _currentShield = _maxShield;
+                    }
+                }
+                else
+                {
+                    if (!_isRunCODelayRecoveryShield)
+                    {
+                        if (_currentShield < _maxShield)
+                        {
+                            StartCoroutine(CODelayRecoveryShield());
+                        }
+                    }
                 }
             }
         }
 
         IEnumerator CODelayRecoveryShield()
         {
-            if (_isRunCORecoveryShield) yield break;
             if (_isRunCODelayRecoveryShield) yield break;
             _isRunCODelayRecoveryShield = true;
 
             _currentDelayRecoveryShieldTime = 0;
 
-            while (_currentDelayRecoveryShieldTime >= _delayRecoveryShieldTime)
+            _canRecoveryShield = false;
+
+            while (_currentDelayRecoveryShieldTime < _delayRecoveryShieldTime)
             {
                 _currentDelayRecoveryShieldTime += Time.deltaTime;
                 yield return null;
             }
 
-            StartCoroutine(CORecoveryShield());
+            _canRecoveryShield = true;
 
             _isRunCODelayRecoveryShield = false;
         }
 
-        IEnumerator CORecoveryShield()
-        {
-            if (_isRunCORecoveryShield) yield break;
-            _isRunCORecoveryShield = true;
-
-            while (!_isRunCODelayRecoveryShield || _currentShield < _maxShield)
-            {
-                _currentShield += (int)Time.deltaTime;
-                yield return null;
-            }
-
-            _isRunCORecoveryShield = false;
-        }
-
         public void SetHealth(int health)
         {
+            _maxHealth = health;
             _currentHealth = health;
         }
 
@@ -82,30 +103,50 @@ namespace Catze
             _currentShield = shield;
         }
 
-        public void OnDamaged(int damage)
+        public void OnDamaged(int damage, bool isCritical)
         {
+            _canRecoveryShield = false;
             _currentDelayRecoveryShieldTime = 0;
 
-            if (_currentShield > 0)
-            {
-                damage -= _currentShield;
-                
-                _currentShield -= damage;
-                if(_currentShield < 0)
-                {
-                    _currentShield = 0;
-                }
-            }
-            
-            if(damage <= 0)
+            if (_isDeath)
             {
                 return;
             }
 
-            _currentHealth -= damage;
+            if (damage <= 0)
+            {
+                return;
+            }
+
+            int healthDamage = damage;
+
+            if (_currentShield > 0)
+            {
+                var shieldDamagePopup = Instantiate(_pfDamagePopup, transform.position, Quaternion.identity).GetComponentInChildren<DamagePopup>();
+                shieldDamagePopup.SetDamage(damage, isCritical, true);
+
+                var tempShield = (int)_currentShield;
+                _currentShield -= damage;
+
+                if (_currentShield <= 0)
+                {
+                    _currentShield = 0;
+                    healthDamage -= tempShield;
+
+                    if (healthDamage <= 0) return;
+                } 
+                
+                else return;
+            }
+
+            var damagePopup = Instantiate(_pfDamagePopup, transform.position, Quaternion.identity).GetComponentInChildren<DamagePopup>();
+            damagePopup.SetDamage(healthDamage, isCritical);
+
+            _currentHealth -= healthDamage;
 
             if(_currentHealth <= 0)
             {
+                _isDeath = true;
                 Upper.SetStateOrNull(Upper.DeathState);
             }
             else
