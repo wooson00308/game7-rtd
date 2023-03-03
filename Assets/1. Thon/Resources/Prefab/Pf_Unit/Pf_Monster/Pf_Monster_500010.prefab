@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4bcbdc99bdde1b34989cf8fdfe432ead, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -182,7 +182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157811064622713654, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3827919561114203351, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
@@ -228,6 +228,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4218982449854197016, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4966508194153376338, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: _soMonster
       value: 
@@ -235,6 +239,10 @@ PrefabInstance:
     - target: {fileID: 6694995101615832242, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_Name
       value: Pf_Monster_500010
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903166442773978847, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 007407d5e4c3db34e96606c88e329797, type: 3}

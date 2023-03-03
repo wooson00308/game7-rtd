@@ -5,10 +5,13 @@ using UnityEngine;
 namespace Catze
 {
     /// <summary>
-    /// ¸ó½ºÅÍ À¯´Ö (º¸½ºÆ÷ÇÔ)
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
     /// </summary>
     public class Monster : Unit
     {
+        private SpriteRenderer _spriteRenderer;
+        [SerializeField] protected SpriteRenderer _shieldRenderer;
+
         [Header("Monster")]
         [SerializeField] protected Transform _model;
         public Transform Model => _model;
@@ -40,10 +43,27 @@ namespace Catze
         public MDamagedState DamagedState;
         public MDeathState DeathState;
 
+        public override void SetUnitId(string id)
+        {
+            base.SetUnitId(id);
+
+            int order = int.Parse(UnitId);
+
+            _shieldRenderer.sortingOrder = order;
+
+            var mAnimator = Model.GetComponentInChildren<Animator>();
+            if (mAnimator != null)
+            {
+                _spriteRenderer = mAnimator.GetComponentInChildren<SpriteRenderer>();
+            }
+
+            if (_spriteRenderer != null) _spriteRenderer.sortingOrder = order;
+        }
+
         protected override void Awake()
         {
             base.Awake();
-
+            
             SetUnitInfo(_soMonster.Id, _soMonster.DisplayName);
 
             AddPart(AniPart);

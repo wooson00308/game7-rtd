@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2291852982702684718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1855392, y: 3.1855392, z: 3.1855392}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 118245258433710230}
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4bcbdc99bdde1b34989cf8fdfe432ead, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,13 +176,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 855092332186117586, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 855092332186117586, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1182737294564731498, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: _maxHealth
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2157811064622713654, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3827919561114203351, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
@@ -228,6 +236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4218982449854197016, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4966508194153376338, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: _soMonster
       value: 
@@ -235,6 +247,14 @@ PrefabInstance:
     - target: {fileID: 6694995101615832242, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_Name
       value: Pf_Monster_500024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903166442773978847, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903166442773978847, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 007407d5e4c3db34e96606c88e329797, type: 3}

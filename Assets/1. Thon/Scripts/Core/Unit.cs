@@ -10,7 +10,7 @@ namespace Catze
         protected string _unitId;
         public string UnitId => _unitId;
 
-        public void SetUnitId(string id)
+        public virtual void SetUnitId(string id)
         {
             _unitId = id;
         }

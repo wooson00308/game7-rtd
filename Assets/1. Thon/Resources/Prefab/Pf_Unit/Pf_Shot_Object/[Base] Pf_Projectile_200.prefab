@@ -49,6 +49,8 @@ MonoBehaviour:
   onLogWarningMode: 0
   onLogErrorMode: 0
   _moveSpeed: 18
+  _isRotate: 1
+  _rotSpeed: 1
 --- !u!1 &4391959016149164584
 GameObject:
   m_ObjectHideFlags: 0

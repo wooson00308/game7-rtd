@@ -53,6 +53,9 @@ TagManager:
   - name: Monster
     uniqueID: 1177376387
     locked: 0
+  - name: Shield
+    uniqueID: 3559996205
+    locked: 0
   - name: Ship
     uniqueID: 1732547845
     locked: 0
@@ -70,6 +73,9 @@ TagManager:
     locked: 0
   - name: HUD
     uniqueID: 1344016133
+    locked: 0
+  - name: Txt_Dmg
+    uniqueID: 2428698197
     locked: 0
   - name: Pan
     uniqueID: 2351859507

@@ -24,6 +24,9 @@ namespace Catze
                 case MonsterAniState.Move:
                     //PlayMoveState();
                     break;
+                case MonsterAniState.Damaged:
+                    _animator.SetTrigger("Damaged");
+                    break;
             }
         }
 
