@@ -17,6 +17,7 @@ namespace Catze
             yield return new WaitForEndOfFrame();
             
             _animator = Upper.Model.GetComponentInChildren<Animator>();
+            SetAttackSpeed(Upper.SOTower.AtkSpeed);
             Upper.SetStateOrNull(Upper.IdleState);
         }
 
@@ -45,7 +46,7 @@ namespace Catze
 
         public void SetAttackSpeed(float attackSpeed)
         {
-            _animator.SetFloat(ConstantStrings.ANI_PARAM_FLOAT_TOWER_ATTACK_SPEED, 1/attackSpeed);
+            _animator.SetFloat(ConstantStrings.ANI_PARAM_FLOAT_TOWER_ATTACK_SPEED, attackSpeed);
         }
     }
 }

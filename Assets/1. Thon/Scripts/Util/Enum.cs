@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace Catze.Enum
 {
+    public enum ItemType
+    {
+        Currency,
+    }
+    
     public enum IngameEndType
     {
         GameOver,

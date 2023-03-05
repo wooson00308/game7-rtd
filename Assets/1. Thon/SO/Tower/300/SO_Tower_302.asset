@@ -19,8 +19,8 @@ MonoBehaviour:
   _atkSpeed: 1.75
   _atkRange: 11
   _sptTower: {fileID: 21300000, guid: e3ec63f72ed7f314ea7eb52c65716af7, type: 3}
-  _pfTowerModel: {fileID: 6826973098777784204, guid: 7adc3220dfcd29b47940285bbf2f0979, type: 3}
-  _pfProjectile: {fileID: 1382132935896882121, guid: b7c3d7311c72be7479d828a37495f012, type: 3}
+  _pfTowerModel: {fileID: 6826973098777784204, guid: 69e560fdef88281498aeacecb6db00d4, type: 3}
+  _pfProjectile: {fileID: 1382132935896882121, guid: aaaf92699c42dda48886952675917a87, type: 3}
   _pfTower: {fileID: 4325536161990935968, guid: 836c7fe01ca65ea4f8da105c5c4fb1af, type: 3}
   _atkCrtRate: 10
   _atkCrtDamage: 125

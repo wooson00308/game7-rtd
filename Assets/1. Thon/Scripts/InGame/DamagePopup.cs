@@ -17,14 +17,14 @@ namespace Catze
 
         private void Start()
         {
-            Destroy(gameObject, .5f);
+            Destroy(transform.parent.gameObject, .5f);
         }
 
         public void SetDamage(int damage, bool isCriticalHit, bool isShield = false)
         {
             if(isShield)
             {
-                _text.color = Color.blue;
+                _text.color = Color.white;
             }
             
             else if(isCriticalHit)

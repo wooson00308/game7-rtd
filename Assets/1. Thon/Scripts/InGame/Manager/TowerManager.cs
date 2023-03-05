@@ -2,6 +2,7 @@ using Catze.Enum;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,12 +14,6 @@ namespace Catze
     /// </summary>
     public class TowerManager : MUnit<TowerManager>
     {
-        [Header("Tower Manager")]
-        [SerializeField] private Transform _towerParent; 
-        [SerializeField] private SO_Ship _soShip;
-
-        [SerializeField] private SO_TowerBuild _soTowerBuild;
-
         [Serializable]
         public class TowerUpgrade
         {
@@ -35,22 +30,20 @@ namespace Catze
             public int _levelPerCost;
             public int _level;
         }
-
-        [Space]
-
-        [SerializeField] private List<TowerUpgrade> _towerUpgrades;
+        
+        [Header("Tower Manager")]
+        [SerializeField] private Transform _towerParent;
+        [SerializeField] private SO_Ship _soShip;
+        [SerializeField] private SO_TowerBuild _soTowerBuild;
         [SerializeField] private int _maxUpgradeLevel;
-
-        [Space]
-
         [SerializeField] private int _startMoney;
-
-        private int _money;
+        [SerializeField] private int _startUC;
         [SerializeField] private int _spawnTowerCost;
 
-        private SO_BuildTierInfo _buildTierInfo;
+        [SerializeField] private List<TowerUpgrade> _towerUpgrades;
 
-        public int Money => _money;
+        private int _money;
+        private SO_BuildTierInfo _buildTierInfo;
 
         private Ship _ship;
 
@@ -85,6 +78,9 @@ namespace Catze
 
             UIManager.Instance.SetMoney(_money);
             UIManager.Instance.SetSpawnTowerCost(_spawnTowerCost);
+
+            ItemManager.Instance.AddOrIncrease(0, _startUC);
+            UIManager.Instance.SetUC(ItemManager.Instance.GetUpgradeCurrency());
         }
 
         void GameStartEvent()
@@ -100,12 +96,7 @@ namespace Catze
 
         public void TryBuildTower()
         {
-            if(_ship.NodePart.IsNotEmptyNodes())
-            {
-                return;    
-            }
-            
-            if(_money < _spawnTowerCost)
+            if (_ship.NodePart.IsNotEmptyNodes() || _money < _spawnTowerCost)
             {
                 return;
             }
@@ -114,8 +105,11 @@ namespace Catze
             UIManager.Instance.SetMoney(_money);
 
             var soTower = GetRandomSOTower();
-            if(soTower != null)
+            if (soTower != null)
             {
+                if(soTower.BuildTierInfo.BuildTowerClip != null)
+                    SoundManager.Instance.PlaySFX(soTower.BuildTierInfo.BuildTowerClip);
+                
                 _ship.NodePart.TryRandomSpawn(soTower);
             }
             else
@@ -123,6 +117,41 @@ namespace Catze
                 Log($"{nameof(TryBuildTower)}, Build Faild!");
             }
         }
+
+        public SO_Tower GetAcendTower(Tower tower)
+        {
+            int uc = ItemManager.Instance.GetUpgradeCurrency();
+            if (uc < tower.SOTower.AcendCost)
+            {
+                Log($"Not Enough Money! : {uc} < {tower.SOTower.AcendCost}");
+                return null;
+            }
+
+            ItemManager.Instance.RemoveOrDecrease(0, tower.SOTower.AcendCost);
+            uc = ItemManager.Instance.GetUpgradeCurrency();
+            UIManager.Instance.SetUC(uc);
+
+            var buildInfluenceTier = _soTowerBuild.GetBuildTierInfo(tower.SOTower.Tier);
+            if (buildInfluenceTier == null)
+            {
+                return null;
+            }
+
+            if (!Util.GetRateResult(buildInfluenceTier.BuildWeightRate))
+            {
+                return null;
+            }
+
+            var buildTier = _soTowerBuild.GetAcendTier(tower.SOTower.Tier);
+            if (buildTier == null)
+            {
+                return null;
+            }
+
+            _buildTierInfo = buildTier.SOTierInfo;
+            return buildTier.SOTower;
+        }
+
 
         // Return SOTower.PfTower as each BuildWeightRate of SO_TowerBuildTier in _soTowerBuild.
         public SO_Tower GetRandomSOTower()
@@ -147,35 +176,6 @@ namespace Catze
                 }
 
                 randomValue -= soTowerBuildTier.SOTierInfo.BuildWeightRate;
-            }
-
-            return null;
-        }
-
-        public SO_Tower GetAcendTower(Tower tower)
-        {
-            if (_money < tower.SOTower.AcendCost)
-            {
-                Log($"Not Enough Money! : {_money} < {tower.SOTower.AcendCost}");
-                return null;
-            }
-
-            _money -= tower.SOTower.AcendCost;
-            UIManager.Instance.SetMoney(_money);
-
-            var buildInfluenceTier = _soTowerBuild.GetBuildTierInfo(tower.SOTower.Tier);
-            if (buildInfluenceTier != null)
-            {
-                if (Util.GetRateResult(buildInfluenceTier.BuildWeightRate))
-                {
-                    var buildTier = _soTowerBuild.GetAcendTier(tower.SOTower.Tier);
-                    if (buildTier != null)
-                    {
-                        _buildTierInfo = buildTier.SOTierInfo;
-                        return buildTier.SOTower;
-                    }
-                    
-                }
             }
 
             return null;
@@ -235,41 +235,14 @@ namespace Catze
 
         public void BulkSell(List<Influence> influences, List<TowerTier> tiers)
         {
-            List<Tower> towers = new List<Tower>();
+            var towers = TowerStorage.Instance.BuildTowers
+                .Where(t => influences.Contains(t.SOTower.Influence) && tiers.Contains(t.SOTower.Tier))
+                .ToList();
 
-            foreach(var tower in TowerStorage.Instance.BuildTowers)
+            foreach (var tower in towers)
             {
-                bool validInfluence = false;
-                foreach(var influence in influences)
-                {
-                    if (tower.SOTower.Influence.Equals(influence))
-                    {
-                        validInfluence = true;
-                        break;
-                    }
-                }
-
-                bool validTier = false;
-                foreach (var tier in tiers)
-                {
-                    if (tower.SOTower.Tier.Equals(tier))
-                    {
-                        validTier = true;
-                        break;
-                    }
-                }
-
-                if (validInfluence && validTier)
-                {
-                    var node = tower.UpperUnit.GetComponent<Node>();
-                    node.SellTower(false);
-
-                    towers.Add(tower);
-                }
-            }
-            
-            foreach(var tower in towers)
-            {
+                var node = tower.UpperUnit.GetComponent<Node>();
+                node.SellTower(false);
                 RemoveTower(tower);
             }
         }

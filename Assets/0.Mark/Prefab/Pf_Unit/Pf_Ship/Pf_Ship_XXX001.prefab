@@ -2054,6 +2054,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8431235960485284948}
     m_Modifications:
+    - target: {fileID: 1401520441414458220, guid: 95c3a7353bce790489315333bfd2292e, type: 3}
+      propertyPath: m_Size.x
+      value: 11.040712
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401520441414458220, guid: 95c3a7353bce790489315333bfd2292e, type: 3}
+      propertyPath: m_Size.y
+      value: 3.8487754
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401520441414458220, guid: 95c3a7353bce790489315333bfd2292e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.21597767
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401520441414458220, guid: 95c3a7353bce790489315333bfd2292e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.019634247
+      objectReference: {fileID: 0}
     - target: {fileID: 5641985301028517685, guid: 95c3a7353bce790489315333bfd2292e, type: 3}
       propertyPath: m_Name
       value: Pf_Ship_XXX001

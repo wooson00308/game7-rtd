@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ab8e38af7e0534a89f44ea3749d042, type: 3}
+  m_Name: SO_Projectile_100
+  m_EditorClassIdentifier: 
+  _id: 100
+  _displayName: 100
+  _speed: 30
+  _isRotate: 1
+  _shootClip: {fileID: 0}
+  _hitClip: {fileID: 0}
+  _hitCriticalClip: {fileID: 0}
+  _pfHitFx: {fileID: 0}
+  _pfProjectileModel: {fileID: 0}
+  _pfProjectile: {fileID: 1382132935896882121, guid: 2ff1381e8e417f2498316e416def543c, type: 3}

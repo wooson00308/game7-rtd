@@ -24,6 +24,9 @@ namespace Catze
 
             if(Upper.AttackPart.Target != null)
             {
+                if (Upper.SOTower.TowerAttackClip != null)
+                    SoundManager.Instance.PlaySFX(Upper.SOTower.TowerAttackClip);
+
                 AniPart.Play(TowerAniState.Attack);
                 Upper.AttackPart.Attack();
             }
