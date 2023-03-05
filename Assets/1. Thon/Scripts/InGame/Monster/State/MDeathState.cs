@@ -28,7 +28,7 @@ namespace Catze
                 {
                     if(drop._pfDropFx != null)
                     {
-                        var dropfx = Instantiate(drop._pfDropFx, Upper.transform.position, Quaternion.identity);
+                        var dropfx = Effect.Instantiate(drop._pfDropFx, transform.position, null);
                         dropfx.Activate();
                     }
 

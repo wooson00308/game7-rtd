@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Catze.PathStorage;
 
 namespace Catze
 {
@@ -22,7 +23,7 @@ namespace Catze
             }
         }
 
-        private Vector2 _currentPath;
+        private PathData _currentPath;
 
         private float _defaultSpeed;
         private float _currentSpeed;
@@ -47,7 +48,7 @@ namespace Catze
         {
             _pathStorage = mPath;
             _currentPath = _pathStorage.GetPath();
-            Upper.transform.position = _currentPath;
+            Upper.transform.position = _currentPath.transform.position;
         }
 
         public void Movement()
@@ -60,12 +61,13 @@ namespace Catze
                 _currentPath = _pathStorage.GetPath();
             }
 
-            Upper.transform.position = Vector3.MoveTowards(Upper.transform.position, _currentPath, _currentSpeed * Time.deltaTime);
+            Upper.Model.rotation = Quaternion.Euler(0, _currentPath.isFlip ? 180 : 0, 0);
+            Upper.transform.position = Vector3.MoveTowards(Upper.transform.position, _currentPath.transform.position, _currentSpeed * Time.deltaTime);
         }
 
         private bool IsDestination()
         {
-            var distance = Vector2.Distance(Upper.transform.position, _currentPath);
+            var distance = Vector2.Distance(Upper.transform.position, _currentPath.transform.position);
             return distance <= 0.1f;
         }
     }

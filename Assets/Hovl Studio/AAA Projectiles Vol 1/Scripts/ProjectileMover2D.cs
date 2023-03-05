@@ -13,7 +13,7 @@ public class ProjectileMover2D : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject[] Detached;
 
-    void Start()
+    void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
         if (flash != null)
@@ -34,7 +34,14 @@ public class ProjectileMover2D : MonoBehaviour
                 Destroy(flashInstance, flashPsParts.main.duration);
             }
         }
-        Destroy(gameObject,5);
+
+        StartCoroutine(CODuration());
+
+        IEnumerator CODuration()
+        {
+            yield return new WaitForSeconds(5F);
+            gameObject.SetActive(false);
+        }
 	}
 
     void FixedUpdate ()
@@ -87,6 +94,6 @@ public class ProjectileMover2D : MonoBehaviour
             }
         }
         //Destroy projectile on collision
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Catze.PathStorage;
 
 namespace Catze
 {
@@ -10,7 +11,7 @@ namespace Catze
         [SerializeField] private bool _isUseCustomPath;
         [SerializeField] private bool _isLoop;
         [SerializeField] private bool _isLocalPath;
-        [SerializeField] private List<Transform> customPaths;
+        [SerializeField] private List<PathData> customPaths;
         [SerializeField] private PathStorage _pathStorage;
         public PathStorage PathStorage => _pathStorage;
 
@@ -18,13 +19,13 @@ namespace Catze
         {
             base.Awake();
 
-            var paths = new List<Vector2>();
+            var paths = new List<PathData>();
 
             if (_isUseCustomPath)
             {
                 foreach(var path in customPaths)
                 {
-                    paths.Add(path.position);
+                    paths.Add(path);
                 }
 
                 _pathStorage.Setup(paths, _isLocalPath, _isLoop);

@@ -179,6 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8191037248131630328}
+  - component: {fileID: 6028591097984819749}
   m_Layer: 0
   m_Name: PF_DamagePopup
   m_TagString: Untagged
@@ -202,6 +203,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6028591097984819749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550166502654678114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c3eb3388bec9041b15f8230656dc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onLogMode: 0
+  onLogWarningMode: 0
+  onLogErrorMode: 0
 --- !u!1 &5552380616341273454
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +229,6 @@ GameObject:
   - component: {fileID: 5025141446768721965}
   - component: {fileID: 4443712520062399086}
   - component: {fileID: 6972717261719849525}
-  - component: {fileID: 8404640522442342910}
   - component: {fileID: 4974383463309029265}
   - component: {fileID: 6120565885489585596}
   m_Layer: 0
@@ -378,21 +393,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4443712520062399086}
   m_maskType: 0
---- !u!114 &8404640522442342910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5552380616341273454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c3eb3388bec9041b15f8230656dc97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onLogMode: 0
-  onLogWarningMode: 0
-  onLogErrorMode: 0
 --- !u!95 &4974383463309029265
 Animator:
   serializedVersion: 4

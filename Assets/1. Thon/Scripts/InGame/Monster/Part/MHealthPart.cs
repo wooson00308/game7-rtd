@@ -22,7 +22,6 @@ namespace Catze
         private float _currentDelayRecoveryShieldTime;
         [SerializeField] SpriteRenderer _shieldObject;
         [SerializeField] StatusSlider _statusSlider;
-        [SerializeField] GameObject _pfDamagePopup;
         
         protected override void Awake()
         {
@@ -40,6 +39,9 @@ namespace Catze
 
             _shieldObject.gameObject.SetActive(_currentShield > 0);
             _statusSlider.SetHP(_currentHealth / _maxHealth * 1f);
+
+            bool isFullCondition = _currentHealth == _maxHealth && _currentShield == _maxShield;
+            _statusSlider.gameObject.SetActive(!isFullCondition);
 
             if (_maxShield > 0)
             {
@@ -118,11 +120,16 @@ namespace Catze
                 return;
             }
 
+            if (Upper.SOMonster.MonsterHitClip != null)
+            {
+                SoundManager.Instance.PlaySFX(Upper.SOMonster.MonsterHitClip);
+            }
+            
             int healthDamage = damage;
 
             if (_currentShield > 0)
             {
-                var shieldDamagePopup = Instantiate(_pfDamagePopup, transform.position, Quaternion.identity).GetComponentInChildren<DamagePopup>();
+                var shieldDamagePopup = PoolStorage.Pooling(15589, Upper.SOMonster.PfDamagePopup.GetComponent<DamagePopup>(), transform.position);
                 shieldDamagePopup.SetDamage(damage, isCritical, true);
 
                 var tempShield = (int)_currentShield;
@@ -139,7 +146,7 @@ namespace Catze
                 else return;
             }
 
-            var damagePopup = Instantiate(_pfDamagePopup, transform.position, Quaternion.identity).GetComponentInChildren<DamagePopup>();
+            var damagePopup = PoolStorage.Pooling(15589, Upper.SOMonster.PfDamagePopup.GetComponent<DamagePopup>(), transform.position);
             damagePopup.SetDamage(healthDamage, isCritical);
 
             _currentHealth -= healthDamage;

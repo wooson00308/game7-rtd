@@ -16,6 +16,7 @@ namespace Catze
     public class UIManager : MUnit<UIManager>
     {
         [Header("UI Manager")]
+        public Transform DPParent;
         [SerializeField] private TowerInfoPopupUI _popupInfoUnit;
         [SerializeField] private GameObject _upgradeTowerUI;
         [SerializeField] private GameObject _detailSellOptionUI;

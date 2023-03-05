@@ -23,7 +23,7 @@ namespace Catze
 
         private int _defaultAttackCrtDamage;
         private int _currentAttackCrtDamage;
-        
+
         private Projectile _projectile;
 
         public float AttackSpeed => _currentAttackSpeed;
@@ -32,9 +32,9 @@ namespace Catze
         {
             if (Util.GetRateResult(_currentAttackCrtRate))
             {
-                Log($"Critical! {_currentAttackDamage} -> {_currentAttackCrtDamage}");
+                Log($"Critical! {_currentAttackDamage} -> {AttackCrtDamage}");
 
-                callback?.Invoke(_currentAttackCrtDamage, true);
+                callback?.Invoke(AttackCrtDamage, true);
             }
             else
             {
@@ -52,7 +52,7 @@ namespace Catze
         }
 
         public float AttackCrtRate => _currentAttackCrtRate;
-        public int AttackCrtDamage => _currentAttackCrtDamage;
+        public int AttackCrtDamage => (int)(_currentAttackDamage * ( 0.1f * _currentAttackCrtDamage));
 
         public abstract class Part : UnitPart
         {
@@ -86,7 +86,7 @@ namespace Catze
 
         public void Attack()
         {
-            var projectile = Instantiate(_projectile, transform.position, Quaternion.identity);
+            var projectile = PoolStorage.Pooling(_projectile.SoProjectile.Id, _projectile.SoProjectile.PfProjectile, transform.position);
             projectile.SetAttacker(Upper);
             projectile.SetTarget(Target);
         }

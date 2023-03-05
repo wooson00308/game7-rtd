@@ -1,39 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Catze
 {
     public class Projectile : Unit
     {
-        [SerializeField] private SO_Projectile _soProjectile;
-        public SO_Projectile SoProjectile => _soProjectile;
-        
-        private Tower _attacker;
-        private Monster _target;
-        
-        private Effect _attackFx;
-        private Vector2 _moveVec;
-        
+        [SerializeField] private SO_Projectile soProjectile;
+        public SO_Projectile SoProjectile => soProjectile;
+
+        private Tower attacker;
+        private Monster target;
+
+        private Effect attackFx;
+        private Vector2 moveVec;
+
         public void SetAttacker(Tower attacker)
         {
-            _attacker = attacker;
+            this.attacker = attacker;
         }
 
-        public void SetTarget(Monster monster)
+        public void SetTarget(Monster target)
         {
-            _target = monster;
-            if(_target == null)
+            this.target = target;
+
+            if (this.target == null)
             {
-                Destroy(gameObject);
+                Deactivate();
             }
         }
 
-        protected override void Awake()
+        protected void OnEnable()
         {
-            base.Awake();
-
             Activate();
         }
 
@@ -43,64 +42,64 @@ namespace Catze
 
             base.OnFixedUpdate();
 
-            // Please refactor the code below inside this function
-
-            if (_target == null)
+            if (target == null)
             {
-                if (_moveVec == Vector2.zero) Destroy(gameObject);
+                if (moveVec == Vector2.zero)
+                {
+                    Deactivate();
+                }
             }
             else
             {
-                _moveVec = _target.transform.position;
+                moveVec = target.transform.position;
             }
 
-            if (SoProjectile.IsRotate)
+            if (soProjectile.IsRotate)
             {
-                var rotVec = _moveVec - (Vector2)transform.position;
+                var rotVec = moveVec - (Vector2)transform.position;
 
                 float angle = Mathf.Atan2(rotVec.y, rotVec.x) * Mathf.Rad2Deg + 270; // 270 = 투사체 앞이 Y축 +를 바라보고 있기에
                 Quaternion angelAxis = Quaternion.AngleAxis(angle, Vector3.forward);
                 transform.rotation = angelAxis;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, _moveVec, SoProjectile.Speed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, moveVec, soProjectile.Speed * Time.fixedDeltaTime);
 
-            // 목적지에 도착하면
             if (IsDestination())
             {
-                // 이팩트 발생
-                if (_attackFx != null) _attackFx.Activate(() => Destroy(gameObject));
-
-                // 데미지 적용
-                
-                // 스플레쉬
-                if (_attacker.SOTower.IsAtkSplash)
+                if (attackFx != null)
                 {
-                    _attacker.AttackPart.AttackDamageOrCrt(StageManager.Instance.OnMonsterSplashDamage);
+                    attackFx.Activate(() => Deactivate());
                 }
-
-                // 단일 공격
                 else
                 {
-                    if (!_target.DeathState.IsDeath)
-                    {
-                        _attacker.AttackPart.AttackDamageOrCrt(_target.HealthPart.OnDamaged);
-                    }
+                    Deactivate();
                 }
 
-                // 투사체 파괴
-                Destroy(gameObject);
+                if (attacker.SOTower.IsAtkSplash)
+                {
+                    attacker.AttackPart.AttackDamageOrCrt(StageManager.Instance.OnMonsterSplashDamage);
+                }
+                else
+                {
+                    if (!target.DeathState.IsDeath)
+                    {
+                        attacker.AttackPart.AttackDamageOrCrt(target.HealthPart.OnDamaged);
+                    }
+                }
             }
         }
 
-        /// <summary>
-        /// 목적지에 도착했는지 확인
-        /// </summary>
-        /// <returns></returns>
         private bool IsDestination()
         {
-            var distance = Vector2.Distance(transform.position, _moveVec);
+            var distance = Vector2.Distance(transform.position, moveVec);
             return distance <= 0.1f;
+        }
+
+        private void Deactivate()
+        {
+            PoolStorage.ReturnPool(soProjectile.Id, gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

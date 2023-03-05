@@ -20,5 +20,5 @@ MonoBehaviour:
   _hitClip: {fileID: 0}
   _hitCriticalClip: {fileID: 0}
   _pfHitFx: {fileID: 0}
-  _pfProjectileModel: {fileID: 0}
+  _pfProjectileModel: {fileID: 3793129478459503957, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
   _pfProjectile: {fileID: 1382132935896882121, guid: 2ff1381e8e417f2498316e416def543c, type: 3}
