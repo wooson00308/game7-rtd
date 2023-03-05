@@ -13,19 +13,17 @@ MonoBehaviour:
   m_Name: SO_Tower_200
   m_EditorClassIdentifier: 
   _influence: 200
-  _tier: 0
+  _buildTierInfo: {fileID: 11400000, guid: fb8bd4c8a40db5343a564765549b0a33, type: 2}
   _atkDamage: 8
   _increaseLevelAtkDamage: 8
   _atkSpeed: 2
   _atkRange: 10
   _sptTower: {fileID: 21300000, guid: a4ccd016c14e40a408b4619cff808bbc, type: 3}
-  _pfTowerModel: {fileID: 4167702230187793359, guid: be0682e66904a9b4bb0b3132ffac71a8, type: 3}
+  _pfTowerModel: {fileID: 6826973098777784204, guid: 7adc3220dfcd29b47940285bbf2f0979, type: 3}
   _pfProjectile: {fileID: 1382132935896882121, guid: 4aae36c8f20e9c34aba9dca575c97624, type: 3}
   _pfTower: {fileID: 4325536161990935968, guid: 836c7fe01ca65ea4f8da105c5c4fb1af, type: 3}
   _atkCrtRate: 10
   _atkCrtDamage: 125
   _skillIds: 000000000000000000000000
-  _sellGold: 30
-  _ascendRate: 50
+  _towerAttackClip: {fileID: 0}
   _soTowerAnimation: {fileID: 11400000, guid: c9b5d8c52fe835b4eb6471c00db18fab, type: 2}
-  _buildTierInfo: {fileID: 11400000, guid: fb8bd4c8a40db5343a564765549b0a33, type: 2}

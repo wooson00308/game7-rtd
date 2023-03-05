@@ -16,4 +16,5 @@ MonoBehaviour:
   _tier: 5
   _buildWeightRate: 0.5
   _cost: 300
+  _sellGold: 550
   _pfGradeColor: {fileID: 602784485575602489, guid: 855694d61db9af54dba9d388657a1b8d, type: 3}

@@ -16,7 +16,7 @@ namespace Catze
         IEnumerator COActivate()
         {
             yield return null;
-            
+
             Upper.AniPart.Play(Enum.MonsterAniState.Damaged);
 
             Upper.SetStateOrNull(Upper.MoveState);

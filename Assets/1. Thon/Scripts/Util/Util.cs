@@ -10,21 +10,21 @@ namespace Catze
     {
         public bool isLoop = true;
         public bool isLocalPath;
-        [SerializeField] private List<Vector2> paths;
-        public List<Vector2> Paths => paths;
+
+        [SerializeField] private List<PathData> paths;
+        public List<PathData> Paths => paths;
 
         private int pathIndex = 0;
-
         public int CurIndex => pathIndex;
 
-        public void Setup(List<Vector2> paths, bool isLocalPath, bool isLoop = true)
+        public void Setup(List<PathData> paths, bool isLocalPath, bool isLoop = true)
         {
             this.paths = paths;
             this.isLocalPath = isLocalPath;
             this.isLoop = isLoop;
         }
 
-        public Vector2 GetPath()
+        public PathData GetPath()
         {
             if(pathIndex >= paths.Count)
             {

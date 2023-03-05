@@ -18,6 +18,9 @@ namespace Catze
         [SerializeField] protected GameObject _pfMonsterModel;
         [SerializeField] protected GameObject _pfMonsterDamagedFx;
         [SerializeField] protected Monster _pfMonster;
+        [SerializeField] protected AudioClip _monsterHitClip;
+        [SerializeField] protected AudioClip _monsterDeathClip;
+        [SerializeField] protected GameObject _pfDamagePopup;
 
         public int Id => _id;
         public int Influence => _influence;
@@ -29,5 +32,8 @@ namespace Catze
         public GameObject PfMonsterModel => _pfMonsterModel;
         public GameObject PfMonsterDamagedFx => _pfMonsterDamagedFx;
         public Monster PfMonster => _pfMonster;
+        public AudioClip MonsterHitClip => _monsterHitClip;
+        public AudioClip MonsterDeathClip => _monsterDeathClip;
+        public GameObject PfDamagePopup => _pfDamagePopup;
     }
 }

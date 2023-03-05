@@ -7,32 +7,45 @@ namespace Catze
 {
     public class DamagePopup : Unit
     {
-        TMP_Text _text;
+        private TMP_Text text;
 
         protected override void Awake()
         {
             base.Awake();
-            _text = GetComponent<TMP_Text>();
+            text = GetComponentInChildren<TMP_Text>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            Destroy(gameObject, .5f);
+            StartCoroutine(DeactivateAfterDelay());
+        }
+
+        private IEnumerator DeactivateAfterDelay()
+        {
+            yield return new WaitForSeconds(0.5f);
+            Deactivate();
         }
 
         public void SetDamage(int damage, bool isCriticalHit, bool isShield = false)
         {
-            if(isShield)
+            if (isShield)
             {
-                _text.color = Color.blue;
+                text.color = Color.white;
             }
-            
-            else if(isCriticalHit)
+            else if (isCriticalHit)
             {
-                _text.color = Color.red;
+                text.color = Color.red;
             }
-            
-            _text.text = damage.ToString();
+
+            text.text = damage.ToString();
+        }
+
+        public void Deactivate()
+        {
+            text.color = Color.white;
+
+            gameObject.SetActive(false);
+            PoolStorage.ReturnPool(15589, gameObject);
         }
     }
 }

@@ -22,3 +22,6 @@ MonoBehaviour:
   _pfMonsterModel: {fileID: 7907828930248942921, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
   _pfMonsterDamagedFx: {fileID: 0}
   _pfMonster: {fileID: 8483571079667069865, guid: e316878fac84f0c4aaec8cbbccd6d9bb, type: 3}
+  _monsterHitClip: {fileID: 0}
+  _monsterDeathClip: {fileID: 0}
+  _pfDamagePopup: {fileID: 5550166502654678114, guid: c59b2d57a49352b4ba0b65df625f05ea, type: 3}

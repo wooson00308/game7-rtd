@@ -24,7 +24,7 @@ namespace Catze
             public int _maxMonsterSpawnCnt;
             public int _monsterHealth;
             public int _monsterShield;
-            public int _dropMoney;
+            public SO_DropTable _dropTable;
 
             public float _moveSpeed;
         }
@@ -180,7 +180,7 @@ namespace Catze
                 monster.MovePart.SetMoveSpeed(_curWave._moveSpeed);
                 monster.HealthPart.SetHealth(_curWave._monsterHealth);
                 monster.HealthPart.SetShield(_curWave._monsterShield);
-                monster.SetDropMoney(_curWave._dropMoney);
+                monster.SetDropMoney(_curWave._dropTable);
                 monster.SetUnitId($"{_curWaveIndex}{currentSpawnCnt}");
 
                 _monsterCount++;

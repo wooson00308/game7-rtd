@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 200
   _displayName: 200
-  _speed: 18
-  _isRotate: 0
+  _speed: 28
+  _isRotate: 1
   _shootClip: {fileID: 0}
   _hitClip: {fileID: 0}
   _hitCriticalClip: {fileID: 0}
   _pfHitFx: {fileID: 0}
-  _pfProjectileModel: {fileID: 0}
+  _pfProjectileModel: {fileID: 1135253367134556467, guid: c17dccbb33c76d94e87bdd8cb0099771, type: 3}
   _pfProjectile: {fileID: 1382132935896882121, guid: 4aae36c8f20e9c34aba9dca575c97624, type: 3}

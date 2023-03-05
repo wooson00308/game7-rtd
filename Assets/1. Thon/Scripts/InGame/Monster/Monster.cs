@@ -19,8 +19,8 @@ namespace Catze
         [SerializeField] protected SO_Monster _soMonster;
         public SO_Monster SOMonster => _soMonster;
 
-        private int _dropMoney;
-        public int DropMoney => _dropMoney;
+        private SO_DropTable _dropTable;
+        public SO_DropTable DropTable => _dropTable;
 
         public abstract class Part : UnitPart
         {
@@ -78,9 +78,9 @@ namespace Catze
             SetStateOrNull(MoveState);
         }
 
-        public void SetDropMoney(int money)
+        public void SetDropMoney(SO_DropTable dropTable)
         {
-            _dropMoney = money;
+            _dropTable = dropTable;
         }
     }
 }

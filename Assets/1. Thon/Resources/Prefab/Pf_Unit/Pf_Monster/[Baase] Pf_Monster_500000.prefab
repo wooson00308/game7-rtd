@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2157811064622713654}
   - component: {fileID: 5145468811271105827}
-  - component: {fileID: 4050254419383362356}
   m_Layer: 7
   m_Name: collider
   m_TagString: Enemy
@@ -133,27 +132,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &4050254419383362356
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007115671747050458}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4668301091065884553
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +228,6 @@ MonoBehaviour:
   onLogErrorMode: 0
   _shieldObject: {fileID: 2447855308444539197}
   _statusSlider: {fileID: 4898498398676608567}
-  _pfDamagePopup: {fileID: 5550166502654678114, guid: c59b2d57a49352b4ba0b65df625f05ea, type: 3}
 --- !u!1 &5570627603448792713
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895679d822410214eb38fa5c19f0afab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onLogMode: 0
+  onLogMode: 1
   onLogWarningMode: 0
   onLogErrorMode: 0
   _pathStorage:
