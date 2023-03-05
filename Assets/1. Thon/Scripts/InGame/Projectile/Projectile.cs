@@ -43,6 +43,8 @@ namespace Catze
 
             base.OnFixedUpdate();
 
+            // Please refactor the code below inside this function
+
             if (_target == null)
             {
                 if (_moveVec == Vector2.zero) Destroy(gameObject);
