@@ -48,7 +48,6 @@ MonoBehaviour:
   onLogMode: 0
   onLogWarningMode: 0
   onLogErrorMode: 0
-  model: {fileID: 0}
   soProjectile: {fileID: 11400000, guid: 6aff3a5c716acf8469ec09c3e7dbd81a, type: 2}
 --- !u!1001 &4161385055947689130
 PrefabInstance:
@@ -57,6 +56,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1382132935896882120}
     m_Modifications:
+    - target: {fileID: 1493604517778988116, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493604517778988116, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493604517778988116, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 892d590de9162af45845ccadbef5e2eb, type: 3}
+    - target: {fileID: 1493604517778988116, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493604517778988116, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493604517778988116, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493604517778988116, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570020032257688379, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570020032257688379, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3793129478459503957, guid: 11d2edad2e2ff7745a0b2f5242b3395a, type: 3}
       propertyPath: m_Name
       value: PF_Model_Projectile_100
