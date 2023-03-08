@@ -10,8 +10,8 @@ namespace Catze
 {
     public class DetailSellPopupUI : PopupUI
     {
-        static readonly Color s_selectedColor = new Color(.5f, .5f, .5f);
-        static readonly Color s_deselectedColor = new Color(1, 1, 1);
+        static readonly Color s_selectedColor = new Color(1, 1, 1);
+        static readonly Color s_deselectedColor = new Color(0.2f, 0.2f, 0.2f);
         [Serializable]
         public class DetailButtonUI
         {

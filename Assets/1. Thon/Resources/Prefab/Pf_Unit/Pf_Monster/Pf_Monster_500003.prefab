@@ -11,9 +11,17 @@ PrefabInstance:
       propertyPath: _maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2120676888952090842, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.124
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120676888952090842, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.078
+      objectReference: {fileID: 0}
     - target: {fileID: 2157811064622713654, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3436456895285460712, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
@@ -67,22 +75,34 @@ PrefabInstance:
       propertyPath: _soMonster
       value: 
       objectReference: {fileID: 11400000, guid: 39191c8a40a0af94cb98b6470f6b042f, type: 2}
+    - target: {fileID: 5368934250123917048, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed6de8582f637e54c9f94c04093cafef, type: 3}
     - target: {fileID: 6694995101615832242, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_Name
       value: Pf_Monster_500003
       objectReference: {fileID: 0}
+    - target: {fileID: 7059258727452374121, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8b7cb6a2e6d670946a465cfe3b3bbb0b, type: 3}
     - target: {fileID: 7059258727452374121, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8099992648727231920, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8903166442773978847, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9196097440281247347, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed277299bf132d841b6ba45fccf61911, type: 3}
     - target: {fileID: 9196097440281247347, guid: 007407d5e4c3db34e96606c88e329797, type: 3}
       propertyPath: m_SortingOrder
       value: 3

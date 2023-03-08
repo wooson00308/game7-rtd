@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 30001
   _tier: 0
-  _buildWeightRate: 50
-  _cost: 50
+  _buildWeightRate: 1
+  _cost: 1
   _sellGold: 30
   _pfGradeColor: {fileID: 602784485575602489, guid: 4dbf8ced8643a354eaa2a6b9232c55d3, type: 3}
+  _buildTowerClip: {fileID: 0}

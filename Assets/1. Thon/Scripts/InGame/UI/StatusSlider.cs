@@ -37,6 +37,7 @@ namespace Catze
             }
 
             shieldSlider.localScale = new Vector3(value, shieldSlider.localScale.y, shieldSlider.localScale.z);
+            shieldSlider.gameObject.SetActive(value > 0);
         }
     }
 }

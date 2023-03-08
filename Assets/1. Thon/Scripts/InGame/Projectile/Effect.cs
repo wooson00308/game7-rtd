@@ -16,7 +16,7 @@ namespace Catze
 
         private IEnumerator COActivate(Action callback)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
 
             callback?.Invoke();
             Deactivate();

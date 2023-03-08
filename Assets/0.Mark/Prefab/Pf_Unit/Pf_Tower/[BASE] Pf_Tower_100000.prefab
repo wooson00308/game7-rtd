@@ -47,8 +47,6 @@ MonoBehaviour:
   onLogMode: 0
   onLogWarningMode: 0
   onLogErrorMode: 0
-  TargetSelector: {fileID: 6920866440629108841}
-  PFProjectile: {fileID: 0}
 --- !u!1 &4325536161310377782
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +225,6 @@ MonoBehaviour:
   onLogWarningMode: 0
   onLogErrorMode: 0
   _model: {fileID: 4325536162299192321}
-  _soTower: {fileID: 0}
   AniPart: {fileID: 4325536162476841983}
   AttackPart: {fileID: 4325536160963834908}
   IdleState: {fileID: 4325536161540132846}
@@ -401,17 +398,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 234e3cfe9fe21bb42b2c57cdb3d69f03, type: 3}
---- !u!114 &6920866440629108841 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4547927172250464648, guid: 234e3cfe9fe21bb42b2c57cdb3d69f03, type: 3}
-  m_PrefabInstance: {fileID: 6851840864965833185}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b5ad6c54c8e944f97b1f5fb79671f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6920866440629108886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4547927172250464631, guid: 234e3cfe9fe21bb42b2c57cdb3d69f03, type: 3}

@@ -52,7 +52,7 @@ namespace Catze
         }
 
         public float AttackCrtRate => _currentAttackCrtRate;
-        public int AttackCrtDamage => (int)(_currentAttackDamage * ( 0.1f * _currentAttackCrtDamage));
+        public int AttackCrtDamage => (int)(_currentAttackDamage * ( 0.01f * _currentAttackCrtDamage));
 
         public abstract class Part : UnitPart
         {

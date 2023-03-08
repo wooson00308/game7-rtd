@@ -40,13 +40,21 @@ namespace Catze
             _shieldObject.gameObject.SetActive(_currentShield > 0);
             _statusSlider.SetHP(_currentHealth / _maxHealth * 1f);
 
-            bool isFullCondition = _currentHealth == _maxHealth && _currentShield == _maxShield;
-            _statusSlider.gameObject.SetActive(!isFullCondition);
+            bool isFullHealth = _currentHealth == _maxHealth;
+            bool isFullShield = _maxShield != 0 && _currentShield == _maxShield;
+
+            if(_maxShield != 0)
+            {
+                _statusSlider.gameObject.SetActive(!isFullShield);
+            }
+            else
+            {
+                _statusSlider.gameObject.SetActive(!isFullHealth);
+            }
 
             if (_maxShield > 0)
             {
                 _statusSlider.SetSheild(_currentShield / _maxShield * 1f);
-
                 _shieldObject.color = new Color(_shieldObject.color.r, _shieldObject.color.g, _shieldObject.color.b, _currentShield / _maxShield * _maxShieldAlpha);
 
                 if (_canRecoveryShield)

@@ -15,6 +15,6 @@ MonoBehaviour:
   _dropItems:
   - _pfDropFx: {fileID: 3818122941366086273, guid: 837d76e6c90437d48a04c3fb479ff7c4, type: 3}
     _item: {fileID: 11400000, guid: 7226f8e585c543145a53e51cff176b62, type: 2}
-    _dropRate: 35
-    _dropCount: 10
+    _dropRate: 100
+    _dropCount: 1
   _dropMoney: 20

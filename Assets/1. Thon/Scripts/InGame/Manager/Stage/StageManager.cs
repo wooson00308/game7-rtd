@@ -18,6 +18,9 @@ namespace Catze
         {
             public string _waveName;
             public float _waveDuration;
+            public float _spawnDelay;
+            
+            [Space]
             
             public MonsterPath monsterPath;
             public Monster pfMonster;
@@ -37,7 +40,6 @@ namespace Catze
 
         [SerializeField] private int _maxMonsterCount;
         [SerializeField] private float _maxWarningTime;
-        [SerializeField] private float _spawnDelay;
 
         [Header("UI")]
         [SerializeField] private TMP_Text _waveText;
@@ -91,7 +93,7 @@ namespace Catze
         {
             base.Awake();
 
-            _waveMaxMonsterCntText.text = $"{_maxMonsterCount} = Gamve Over";
+            _waveMaxMonsterCntText.text = $"Game Over : {_maxMonsterCount}";
 
             Activate();
         }
@@ -188,7 +190,7 @@ namespace Catze
 
                 currentSpawnCnt++;
 
-                yield return new WaitForSeconds(_spawnDelay);
+                yield return new WaitForSeconds(_curWave._spawnDelay);
             }
         }
 

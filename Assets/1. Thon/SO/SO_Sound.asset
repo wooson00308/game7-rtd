@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SO_Sound
   m_EditorClassIdentifier: 
   _bgm: {fileID: 8300000, guid: f11a040ca26d89047b85b5e5149706e9, type: 3}
-  _buttonClick: {fileID: 8300000, guid: 7fb954e1c1961644d85f884b946f53b0, type: 3}
+  _buttonClick: {fileID: 8300000, guid: ace8ce5c575338f49abf2e1daf21044a, type: 3}
